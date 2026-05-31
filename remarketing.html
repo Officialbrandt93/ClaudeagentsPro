@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude Agents — 100+ AI Specialists for Claude</title>
+
+<!-- Utmify Pixel -->
+<script>
+  window.pixelId = "6a121bd5bc183a1d058d8dde";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
+
+<!-- Utmify Google Pixel -->
+<script>
+  window.googlePixelId = "6a122124509de37d3ee2cbd7";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel-google.js");
+  document.head.appendChild(a);
+</script>
+
+<!-- Utmify UTMs -->
+<script
+  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+  data-utmify-prevent-xcod-sck
+  data-utmify-prevent-subids
+  async
+  defer
+></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #080808;
+  --bg2: #0F0F0F;
+  --bg3: #141414;
+  --bg4: #1A1A1A;
+  --border: #222222;
+  --border2: #2A2A2A;
+  --fg: #FFFFFF;
+  --fg2: #A0A0A0;
+  --fg3: #666666;
+  --lime: #C8FF00;
+  --lime-dim: rgba(200,255,0,0.12);
+  --lime-border: rgba(200,255,0,0.25);
+  --orange: #FF6B35;
+  --orange-dim: rgba(255,107,53,0.12);
+  --purple: #8B5CF6;
+  --purple-dim: rgba(139,92,246,0.12);
+  --red: #FF3B3B;
+  --sans: 'Inter', sans-serif;
+  --display: 'Space Grotesk', sans-serif;
+  --serif: 'Instrument Serif', serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-weight:400;overflow-x:hidden;line-height:1.6;}
+
+/* ── ANNOUNCEMENT BAR ── */
+.announce{
+  background: var(--lime);
+  color: #000;
+  font-family:var(--sans);
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:0.05em;
+  padding:9px 0;
+  overflow:hidden;
+  white-space:nowrap;
+}
+.announce-inner{display:flex;gap:48px;width:max-content;animation:ticker 30s linear infinite;}
+.announce-inner:hover{animation-play-state:paused;}
+@keyframes ticker{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.announce-sep{color:rgba(0,0,0,0.4);}
+
+/* ── NAV ── */
+nav{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:16px 60px;
+  position:sticky;top:0;z-index:100;
+  background:rgba(8,8,8,0.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+}
+.nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none;}
+.nav-logo-icon{width:28px;height:28px;background:var(--lime);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:#000;font-family:var(--display);}
+.nav-logo-text{font-family:var(--display);font-size:15px;font-weight:700;color:var(--fg);}
+.nav-logo-text span{color:var(--lime);}
+.nav-links{display:flex;align-items:center;gap:32px;}
+.nav-links a{font-size:13px;color:var(--fg2);text-decoration:none;transition:color 0.2s;}
+.nav-links a:hover{color:var(--fg);}
+.nav-price{font-size:13px;color:var(--fg2);}
+.nav-price strong{color:var(--lime);}
+.nav-cta{background:var(--lime);color:#000;border:none;padding:10px 20px;font-family:var(--sans);font-size:13px;font-weight:600;border-radius:6px;cursor:pointer;transition:opacity 0.2s;text-decoration:none;}
+.nav-cta:hover{opacity:0.85;}
+
+/* ── STICKY BOTTOM BAR ── */
+.sticky-bar{
+  position:fixed;bottom:0;left:0;right:0;z-index:99;
+  background:var(--bg2);border-top:1px solid var(--border);
+  padding:12px 24px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  transform:translateY(100%);
+  transition:transform 0.3s ease;
+}
+.sticky-bar.visible{transform:translateY(0);}
+.sticky-bar-left{font-size:12px;color:var(--fg3);display:flex;align-items:center;gap:8px;}
+.sticky-bar-left strong{color:var(--lime);font-size:13px;}
+.sticky-bar-right{display:flex;align-items:center;gap:12px;}
+.sticky-bar-price{font-size:18px;font-weight:700;color:var(--fg);}
+.sticky-bar-cta{background:var(--lime);color:#000;border:none;padding:11px 24px;font-size:13px;font-weight:700;border-radius:6px;cursor:pointer;white-space:nowrap;text-decoration:none;}
+
+/* ── HERO ── */
+.hero{
+  min-height:90vh;display:flex;align-items:center;
+  padding:80px 60px;
+  position:relative;
+  overflow:hidden;
+  background:#000000;
+}
+.hero::before{
+  content:'';position:absolute;top:-200px;right:-200px;
+  width:600px;height:600px;
+  background:radial-gradient(circle, rgba(200,255,0,0.06) 0%, transparent 70%);
+  pointer-events:none;
+}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;max-width:1100px;margin:0 auto;width:100%;}
+.hero-left{}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--lime-dim);border:1px solid var(--lime-border);color:var(--lime);font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:6px 14px;border-radius:20px;margin-bottom:28px;}
+.hero-badge-dot{width:6px;height:6px;background:var(--lime);border-radius:50%;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.4;}}
+.hero h1{
+  font-family:var(--display);font-size:clamp(36px,4.5vw,58px);
+  font-weight:800;line-height:1.05;letter-spacing:-0.02em;
+  margin-bottom:12px;
+}
+.hero h1 em{font-style:normal;color:var(--lime);}
+.hero-sub{font-size:16px;color:var(--fg2);line-height:1.7;margin-bottom:32px;max-width:460px;}
+.hero-social-proof{display:flex;align-items:center;gap:12px;margin-bottom:32px;}
+.hero-avatars{display:flex;}
+.hero-avatar{width:32px;height:32px;border-radius:50%;border:2px solid var(--bg);margin-left:-8px;object-fit:cover;display:block;}
+.hero-avatar:first-child{margin-left:0;}
+.hero-sp-text{font-size:13px;color:var(--fg2);}
+.hero-sp-text strong{color:var(--lime);}
+.hero-cta-group{display:flex;flex-direction:column;gap:10px;align-items:flex-start;}
+.hero-cta{display:inline-flex;align-items:center;gap:10px;background:var(--lime);color:#000;border:none;padding:16px 28px;font-size:14px;font-weight:700;border-radius:8px;cursor:pointer;text-decoration:none;transition:all 0.2s;}
+.hero-cta:hover{transform:translateY(-1px);box-shadow:0 8px 32px rgba(200,255,0,0.2);}
+.hero-cta-icon{font-size:18px;}
+.hero-cta-note{font-size:12px;color:var(--fg3);}
+
+/* Hero right — mock platform UI */
+.hero-right{}
+.mock-platform{
+  background:var(--bg3);
+  border:1px solid var(--border);
+  border-radius:12px;
+  overflow:hidden;
+}
+.mock-bar{
+  background:var(--bg4);border-bottom:1px solid var(--border);
+  padding:10px 16px;display:flex;align-items:center;gap:8px;
+}
+.m-dot{width:10px;height:10px;border-radius:50%;}
+.m-r{background:#FF5F57;}.m-y{background:#FEBC2E;}.m-g{background:#28C840;}
+.mock-bar-title{font-family:monospace;font-size:11px;color:#555;margin-left:8px;}
+.mock-body{padding:20px;}
+.mock-tabs{display:flex;gap:4px;margin-bottom:16px;}
+.mock-tab{font-size:11px;padding:5px 12px;border-radius:5px;cursor:pointer;color:var(--fg3);transition:all 0.2s;}
+.mock-tab.active{background:var(--lime);color:#000;font-weight:600;}
+.mock-cat-list{display:flex;flex-direction:column;gap:4px;}
+.mock-cat{display:flex;justify-content:space-between;align-items:center;padding:9px 12px;border-radius:6px;border:1px solid transparent;transition:all 0.2s;cursor:pointer;}
+.mock-cat:hover,.mock-cat.active{background:var(--bg4);border-color:var(--border);}
+.mock-cat.active .mock-cat-name{color:var(--lime);}
+.mock-cat-row{display:flex;align-items:center;gap:10px;}
+.mock-cat-icon{font-size:16px;width:28px;text-align:center;}
+.mock-cat-name{font-size:13px;font-weight:500;}
+.mock-cat-count{font-size:11px;color:var(--lime);font-weight:600;}
+.mock-agent-preview{margin-top:16px;background:var(--bg4);border:1px solid var(--border);border-radius:8px;padding:14px;}
+.map-title{font-size:12px;font-weight:600;color:var(--fg);margin-bottom:2px;}
+.map-sub{font-size:10px;color:var(--fg3);margin-bottom:10px;}
+.map-tags{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:10px;}
+.map-tag{font-size:9px;padding:2px 7px;border-radius:3px;background:var(--bg3);border:1px solid var(--border);color:var(--fg3);}
+.map-install{display:inline-flex;align-items:center;gap:6px;background:var(--lime);color:#000;font-size:11px;font-weight:600;padding:6px 14px;border-radius:5px;cursor:pointer;}
+
+/* ── STATS BAR ── */
+.stats-bar{
+  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  padding:32px 60px;
+  display:flex;gap:0;
+  max-width:100%;
+}
+.stat-item{
+  flex:1;text-align:center;
+  padding:0 24px;
+  border-right:1px solid var(--border);
+}
+.stat-item:last-child{border-right:none;}
+.stat-num{font-family:var(--display);font-size:clamp(32px,4vw,48px);font-weight:800;color:var(--lime);line-height:1;}
+.stat-label{font-size:12px;color:var(--fg3);text-transform:uppercase;letter-spacing:0.1em;margin-top:6px;}
+
+/* ── SECTION WRAPPER ── */
+.sec{padding:100px 60px;max-width:1100px;margin:0 auto;}
+.sec-full{padding:80px 0;}
+.sec-center{text-align:center;}
+.sec-label{font-size:11px;color:var(--fg3);text-transform:uppercase;letter-spacing:0.15em;margin-bottom:16px;display:block;}
+.sec-title{font-family:var(--display);font-size:clamp(28px,3.5vw,44px);font-weight:800;line-height:1.1;letter-spacing:-0.02em;margin-bottom:16px;}
+.sec-title em{font-style:normal;color:var(--lime);}
+.sec-sub{font-size:16px;color:var(--fg2);line-height:1.7;max-width:560px;margin:0 auto;}
+
+/* ── PAIN POINTS ── */
+.pain-section{background:var(--bg2);}
+.pain-headline{
+  padding:80px 60px 60px;max-width:1100px;margin:0 auto;
+}
+.pain-headline h2{font-family:var(--display);font-size:clamp(28px,3.5vw,44px);font-weight:800;line-height:1.1;letter-spacing:-0.02em;margin-bottom:12px;}
+.pain-headline p{font-size:15px;color:var(--fg2);max-width:480px;}
+.pain-cards{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:1px;background:var(--border);
+  padding:0 60px;max-width:none;
+  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+}
+.pain-card{background:var(--bg2);padding:32px 28px;}
+.pain-card-icon{font-size:24px;margin-bottom:16px;display:block;}
+.pain-card h3{font-size:15px;font-weight:600;color:var(--fg);margin-bottom:8px;line-height:1.3;}
+.pain-card p{font-size:13px;color:var(--fg3);line-height:1.7;}
+.pain-callout{
+  padding:0 60px 80px;max-width:1100px;margin:0 auto;
+  padding-top:32px;
+}
+.callout-box{
+  border-left:3px solid var(--lime);
+  background:var(--lime-dim);
+  padding:16px 20px;
+  border-radius:0 6px 6px 0;
+  font-size:14px;color:var(--fg2);
+}
+.callout-box strong{color:var(--lime);}
+
+/* ── COMPARISON TABLE ── */
+.compare-table-wrap{overflow-x:auto;margin-top:48px;}
+.compare-table{width:100%;border-collapse:collapse;}
+.compare-table th{padding:16px 20px;font-size:12px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;border-bottom:1px solid var(--border);}
+.compare-table th:first-child{text-align:left;color:var(--fg3);}
+.compare-table th.col-without{color:var(--fg3);}
+.compare-table th.col-casual{color:var(--fg3);}
+.compare-table th.col-agents{color:var(--lime);background:var(--lime-dim);}
+.compare-table td{padding:14px 20px;font-size:13px;border-bottom:1px solid var(--border);color:var(--fg2);}
+.compare-table td:first-child{color:var(--fg);font-weight:500;}
+.compare-table td.col-agents{background:var(--lime-dim);color:var(--fg);font-weight:500;border-left:1px solid var(--lime-border);border-right:1px solid var(--lime-border);}
+.compare-table td.col-agents.last-row{border-bottom-left-radius:8px;border-bottom-right-radius:8px;}
+.compare-table th.col-agents{border-top-left-radius:8px;border-top-right-radius:8px;border:none;border-bottom:1px solid var(--lime-border);}
+.compare-table tr:hover td{background:rgba(255,255,255,0.02);}
+.compare-table tr:hover td.col-agents{background:rgba(200,255,0,0.15);}
+
+/* ── WHAT IS IT ── */
+.product-section{background:var(--bg2);}
+.product-inner{padding:100px 60px;max-width:1100px;margin:0 auto;}
+.product-name{font-family:var(--display);font-size:clamp(48px,6vw,80px);font-weight:800;color:var(--lime);text-align:center;letter-spacing:-0.03em;margin-bottom:12px;}
+.product-tagline{text-align:center;font-size:18px;color:var(--fg2);margin-bottom:60px;}
+.product-quote{
+  border-left:3px solid var(--lime);
+  padding:24px 32px;
+  background:var(--bg3);
+  border-radius:0 8px 8px 0;
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:18px;
+  color:var(--fg2);
+  line-height:1.7;
+  max-width:680px;
+  margin:0 auto 60px;
+}
+.product-quote strong{color:var(--lime);font-style:normal;}
+.product-pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.pillar{
+  background:var(--bg3);border:1px solid var(--border);
+  border-radius:10px;padding:28px;
+  transition:border-color 0.2s;
+}
+.pillar:hover{border-color:var(--lime-border);}
+.pillar-icon{font-size:28px;margin-bottom:16px;display:block;}
+.pillar h3{font-size:16px;font-weight:600;margin-bottom:8px;}
+.pillar p{font-size:13px;color:var(--fg3);line-height:1.7;}
+
+/* ── AREAS / CATEGORIES ── */
+.areas-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:48px;}
+.area-card{
+  background:var(--bg3);border:1px solid var(--border);
+  border-radius:10px;padding:22px 20px;
+  transition:all 0.2s;cursor:pointer;
+}
+.area-card:hover{border-color:var(--lime-border);background:var(--bg4);}
+.area-icon{font-size:22px;margin-bottom:10px;display:block;}
+.area-name{font-size:14px;font-weight:600;margin-bottom:4px;}
+.area-count{font-size:12px;color:var(--lime);font-weight:600;}
+.area-desc{font-size:12px;color:var(--fg3);margin-top:6px;line-height:1.5;}
+
+/* ── STEPS ── */
+.steps-section{background:var(--bg2);}
+.steps-inner{padding:100px 60px;max-width:1100px;margin:0 auto;}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:60px;position:relative;}
+.steps-grid::before{
+  content:'';position:absolute;
+  top:28px;left:14%;right:14%;
+  height:1px;background:var(--border);
+}
+.step{text-align:center;position:relative;padding:0 16px;}
+.step-circle{
+  width:56px;height:56px;border-radius:50%;
+  border:1px solid var(--lime-border);background:var(--lime-dim);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--display);font-size:18px;font-weight:800;color:var(--lime);
+  margin:0 auto 20px;
+  position:relative;z-index:1;
+}
+.step h3{font-size:15px;font-weight:600;margin-bottom:8px;}
+.step p{font-size:13px;color:var(--fg3);line-height:1.6;}
+
+/* ── BEFORE/AFTER ── */
+.ba-section{}
+.ba-inner{padding:100px 60px;max-width:1100px;margin:0 auto;}
+.ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:48px;border-radius:12px;overflow:hidden;border:1px solid var(--border);}
+.ba-col{padding:36px 32px;}
+.ba-col.bad{background:var(--bg3);}
+.ba-col.good{background:var(--bg4);}
+.ba-col-header{display:flex;align-items:center;gap:10px;margin-bottom:24px;font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;}
+.ba-x{color:var(--red);}
+.ba-check{color:var(--lime);}
+.ba-items{display:flex;flex-direction:column;gap:10px;}
+.ba-item{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--fg2);line-height:1.5;}
+.ba-item-icon{flex-shrink:0;margin-top:2px;font-size:14px;}
+.ba-item.red .ba-item-icon{color:var(--red);}
+.ba-item.green .ba-item-icon{color:var(--lime);}
+.ba-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px;}
+.ba-metric{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:20px;text-align:center;}
+.ba-metric-num{font-family:var(--display);font-size:28px;font-weight:800;color:var(--lime);display:block;}
+.ba-metric-label{font-size:11px;color:var(--fg3);text-transform:uppercase;letter-spacing:0.08em;margin-top:4px;}
+
+/* ── WHO IT'S FOR ── */
+.for-section{background:var(--bg2);}
+.for-inner{padding:100px 60px;max-width:1100px;margin:0 auto;}
+.for-label{font-size:11px;color:var(--fg3);text-transform:uppercase;letter-spacing:0.15em;text-align:center;margin-bottom:16px;}
+.for-title{font-family:var(--display);font-size:clamp(28px,3.5vw,44px);font-weight:800;text-align:center;line-height:1.1;letter-spacing:-0.02em;margin-bottom:16px;}
+.for-sub{font-size:15px;color:var(--fg2);text-align:center;margin-bottom:48px;}
+.for-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.for-item{display:flex;align-items:flex-start;gap:12px;padding:18px 20px;background:var(--bg3);border:1px solid var(--border);border-radius:8px;font-size:14px;color:var(--fg2);}
+.for-arrow{color:var(--lime);font-size:16px;flex-shrink:0;margin-top:2px;}
+
+/* ── BONUSES ── */
+.bonus-section{}
+.bonus-inner{padding:100px 60px;max-width:1100px;margin:0 auto;}
+.bonus-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;}
+.bonus-total-label{font-size:13px;color:var(--fg3);text-transform:uppercase;letter-spacing:0.1em;}
+.bonus-total-val{font-size:13px;color:var(--fg3);text-decoration:line-through;margin-right:8px;}
+.bonus-total-free{font-size:14px;font-weight:700;color:var(--lime);}
+.bonus-divider{height:1px;background:var(--border);margin-bottom:32px;}
+.bonus-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.bonus-card{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:28px;position:relative;}
+.bonus-num{font-size:10px;color:var(--fg3);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:12px;display:block;}
+.bonus-icon{font-size:28px;margin-bottom:16px;display:block;}
+.bonus-card h3{font-size:16px;font-weight:600;margin-bottom:8px;}
+.bonus-card p{font-size:13px;color:var(--fg3);line-height:1.7;margin-bottom:16px;}
+.bonus-checks{display:flex;flex-direction:column;gap:6px;}
+.bonus-check{font-size:12px;color:var(--fg2);}
+.bonus-check::before{content:'✓ ';color:var(--lime);}
+.bonus-price-row{display:flex;justify-content:space-between;align-items:center;margin-top:20px;padding-top:16px;border-top:1px solid var(--border);}
+.bonus-price{font-size:12px;color:var(--fg3);text-decoration:line-through;}
+.bonus-free{font-size:12px;font-weight:700;color:var(--lime);}
+
+/* ── TESTIMONIALS ── */
+.test-section{background:var(--bg2);}
+.test-inner{padding:100px 60px;max-width:1100px;margin:0 auto;}
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px;}
+.test-card{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:24px;transition:border-color 0.2s;}
+.test-card:hover{border-color:var(--border2);}
+.test-stars{color:#FFB800;font-size:14px;letter-spacing:2px;margin-bottom:14px;}
+.test-quote{font-size:14px;color:var(--fg2);line-height:1.7;margin-bottom:18px;font-style:italic;}
+.test-quote::before{content:'\201C';color:var(--lime);font-size:20px;line-height:0;vertical-align:-4px;}
+.test-author-row{display:flex;align-items:center;gap:10px;}
+.test-avatar{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;}
+.test-name{font-size:13px;font-weight:600;}
+.test-role{font-size:11px;color:var(--fg3);}
+
+/* ── PRICING ── */
+.pricing-section{}
+.pricing-inner{padding:100px 60px;max-width:900px;margin:0 auto;}
+.pricing-eyebrow{text-align:center;font-size:13px;color:var(--fg3);margin-bottom:8px;}
+.pricing-main-title{font-family:var(--display);font-size:clamp(26px,3.5vw,42px);font-weight:800;text-align:center;line-height:1.1;letter-spacing:-0.02em;margin-bottom:60px;}
+.pricing-card{
+  background:var(--bg3);border:1px solid var(--border);
+  border-radius:14px;overflow:hidden;
+}
+.pricing-card-top{
+  background:var(--bg4);border-bottom:1px solid var(--border);
+  padding:20px 28px;
+  display:flex;align-items:center;gap:8px;
+}
+.price-bar-dot{width:9px;height:9px;border-radius:50%;}
+.price-bar-title{font-family:monospace;font-size:11px;color:#555;margin-left:8px;}
+.pricing-body{padding:32px 28px;}
+.pricing-items{margin-bottom:24px;}
+.pricing-item{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--border);}
+.pricing-item:last-child{border-bottom:none;}
+.pricing-item-name{font-size:14px;color:var(--fg);}
+.pricing-item-name::before{content:'✓ ';color:var(--lime);}
+.pricing-item-val{font-size:12px;color:var(--fg3);text-decoration:line-through;}
+.pricing-divider{height:1px;background:var(--border);margin:24px 0;}
+.pricing-total-row{display:flex;justify-content:space-between;margin-bottom:24px;}
+.pricing-total-label{font-size:14px;font-weight:500;}
+.pricing-total-val{font-size:14px;color:var(--fg3);text-decoration:line-through;}
+.pricing-cta-block{text-align:center;}
+.price-from{font-size:13px;color:var(--fg3);margin-bottom:4px;}
+.price-big{font-family:var(--display);font-size:72px;font-weight:800;color:var(--lime);line-height:1;margin-bottom:4px;}
+.price-note{font-size:12px;color:var(--fg3);margin-bottom:24px;}
+.price-cta-btn{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--lime);color:#000;border:none;
+  padding:18px 36px;font-size:15px;font-weight:700;
+  border-radius:8px;cursor:pointer;width:100%;justify-content:center;
+  transition:all 0.2s;text-decoration:none;
+}
+.price-cta-btn:hover{opacity:0.9;transform:translateY(-1px);}
+.price-cta-sub{font-size:12px;color:var(--fg3);margin-top:10px;text-align:center;}
+
+/* ── GUARANTEE ── */
+.guarantee-section{background:var(--bg2);}
+.guarantee-inner{padding:100px 60px;max-width:700px;margin:0 auto;text-align:center;}
+.guarantee-icon-wrap{
+  width:72px;height:72px;border-radius:14px;
+  border:1px solid var(--lime-border);background:var(--lime-dim);
+  display:flex;align-items:center;justify-content:center;
+  font-size:32px;margin:0 auto 20px;
+}
+.guarantee-badge{font-size:11px;text-transform:uppercase;letter-spacing:0.15em;color:var(--fg3);margin-bottom:20px;display:block;}
+.guarantee-title{font-family:var(--display);font-size:clamp(24px,3vw,36px);font-weight:800;line-height:1.2;margin-bottom:16px;}
+.guarantee-title span{color:var(--lime);}
+.guarantee-text{font-size:15px;color:var(--fg2);line-height:1.8;margin-bottom:40px;}
+.guarantee-checks{display:grid;grid-template-columns:1fr 1fr;gap:12px;text-align:left;}
+.g-check{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--fg2);padding:14px;background:var(--bg3);border-radius:8px;}
+.g-check-icon{color:var(--lime);flex-shrink:0;margin-top:1px;}
+
+/* ── FAQ ── */
+.faq-section{}
+.faq-inner{padding:100px 60px;max-width:740px;margin:0 auto;}
+.faq-list{margin-top:48px;}
+.faq-item{border-bottom:1px solid var(--border);}
+.faq-q{width:100%;background:none;border:none;text-align:left;padding:20px 0;font-family:var(--sans);font-size:15px;color:var(--fg);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;}
+.faq-plus{width:28px;height:28px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--fg3);flex-shrink:0;transition:all 0.2s;}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 0.3s ease,padding 0.3s;font-size:14px;line-height:1.8;color:var(--fg3);}
+.faq-item.open .faq-a{max-height:300px;padding-bottom:20px;}
+.faq-item.open .faq-plus{transform:rotate(45deg);border-color:var(--lime);color:var(--lime);}
+
+/* ── FINAL CTA ── */
+.final-section{}
+.final-inner{padding:120px 60px;max-width:800px;margin:0 auto;text-align:center;}
+.final-title{font-family:var(--display);font-size:clamp(36px,5vw,64px);font-weight:800;line-height:1.05;letter-spacing:-0.03em;margin-bottom:20px;}
+.final-title em{font-style:normal;color:var(--lime);}
+.final-sub{font-size:16px;color:var(--fg2);line-height:1.7;margin-bottom:40px;}
+.final-note{font-size:12px;color:var(--fg3);margin-top:12px;}
+
+/* ── FOOTER ── */
+footer{border-top:1px solid var(--border);padding:60px;background:var(--bg2);}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;max-width:1100px;margin:0 auto 48px;}
+.footer-brand p{font-size:13px;color:var(--fg3);line-height:1.7;margin-top:12px;}
+.footer-col h4{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--fg3);margin-bottom:16px;}
+.footer-col a{display:block;font-size:13px;color:var(--fg3);text-decoration:none;margin-bottom:8px;transition:color 0.2s;}
+.footer-col a:hover{color:var(--lime);}
+.footer-bottom{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding-top:32px;border-top:1px solid var(--border);}
+.footer-copy{font-size:12px;color:var(--fg3);}
+.footer-disclaimer{font-size:11px;color:#333;line-height:1.7;max-width:800px;margin:32px auto 0;text-align:center;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  nav{padding:14px 20px;}
+  .nav-links{display:none;}
+  .hero{padding:60px 24px;min-height:auto;}
+  .hero-grid{grid-template-columns:1fr;gap:40px;}
+  .stats-bar{padding:0 16px;flex-wrap:wrap;}
+  .stat-item{flex:1 1 45%;border-right:none;border-bottom:1px solid var(--border);padding:18px 12px;text-align:center;}
+  .stat-item:nth-child(odd){border-right:1px solid var(--border);}
+  .stat-item:nth-last-child(-n+2){border-bottom:none;}
+  .stat-num{font-size:28px;}
+  .stat-label{font-size:10px;}
+  .sec{padding:60px 24px;}
+  .pain-headline,.pain-callout{padding-left:24px;padding-right:24px;}
+  .pain-cards{grid-template-columns:1fr 1fr;padding:0 24px;}
+  .compare-table-wrap{padding:0 16px;overflow-x:hidden;}
+  .compare-table th.col-without,
+  .compare-table td.col-without,
+  .compare-table th.col-casual,
+  .compare-table td.col-casual{display:none;}
+  .compare-table td,
+  .compare-table th{padding:12px 14px;font-size:12px;}
+  .compare-table td:first-child{font-size:12px;}
+  .product-inner,.steps-inner,.ba-inner,.for-inner,.bonus-inner,.test-inner,.pricing-inner,.guarantee-inner,.faq-inner,.final-inner{padding:60px 24px;}
+  .areas-grid{grid-template-columns:repeat(2,1fr);}
+  .steps-grid{grid-template-columns:1fr 1fr;gap:32px;}
+  .steps-grid::before{display:none;}
+  .ba-grid{grid-template-columns:1fr;}
+  .ba-metrics{grid-template-columns:1fr 1fr;}
+  .for-grid{grid-template-columns:1fr;}
+  .bonus-grid{grid-template-columns:1fr;}
+  .bonus-intro-grid{grid-template-columns:1fr!important;gap:28px!important;}
+  .bonus-intro-grid img{max-width:280px;margin:0 auto;}
+  .test-grid{grid-template-columns:1fr;}
+  .product-pillars{grid-template-columns:1fr;}
+  footer{padding:40px 24px;}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:32px;}
+  .footer-bottom{flex-direction:column;gap:12px;text-align:center;}
+  .sticky-bar{padding:10px 16px;gap:8px;}
+  .sticky-bar-left{flex-direction:column;align-items:flex-start;gap:2px;}
+  .sticky-bar-left strong{font-size:11px;line-height:1.3;}
+  .sticky-bar-left span:first-child{font-size:10px;}
+  .sticky-bar-price{font-size:16px;}
+  .sticky-bar-cta{padding:10px 16px;font-size:12px;}
+  .guarantee-checks{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announce">
+  <div class="announce-inner">
+    <span>🔥 SPECIAL OFFER &nbsp;<span class="announce-sep">|</span>&nbsp; 100+ agents · lifetime access · only $11 today</span>
+    <span>🔒 SECURE PAYMENT &nbsp;<span class="announce-sep">|</span>&nbsp; 7-day money-back guarantee — no questions asked</span>
+    <span>🔥 SPECIAL OFFER &nbsp;<span class="announce-sep">|</span>&nbsp; 100+ agents · lifetime access · only $11 today</span>
+    <span>🔒 SECURE PAYMENT &nbsp;<span class="announce-sep">|</span>&nbsp; 7-day money-back guarantee — no questions asked</span>
+    <span>🔥 SPECIAL OFFER &nbsp;<span class="announce-sep">|</span>&nbsp; 100+ agents · lifetime access · only $11 today</span>
+    <span>🔒 SECURE PAYMENT &nbsp;<span class="announce-sep">|</span>&nbsp; 7-day money-back guarantee — no questions asked</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-icon">C</div>
+    <div class="nav-logo-text">Agents <span>Pro Pack</span></div>
+  </a>
+  <div class="nav-links">
+    
+    <a href="#agents">Agents</a>
+    <a href="#pricing">Price</a>
+    <span class="nav-price">$11 · <strong>lifetime</strong></span>
+  </div>
+  <a href="#pricing" class="nav-cta">Get Agents — $11 →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-left">
+      <div class="hero-badge"><span class="hero-badge-dot"></span> Instant access available</div>
+      <h1>You use Claude every day.<br><em>And still work in manual mode.</em></h1>
+      <p class="hero-sub">Every agent you don't have is 1 hour of work that could be 5 minutes. 100+ specialized agents — marketing, copy, sales, legal, finance — ready to install in under 2 minutes.</p>
+      <div class="hero-social-proof">
+        <div class="hero-avatars">
+          <img class="hero-avatar" src="https://i.pravatar.cc/32?img=47" alt="user">
+          <img class="hero-avatar" src="https://i.pravatar.cc/32?img=32" alt="user">
+          <img class="hero-avatar" src="https://i.pravatar.cc/32?img=19" alt="user">
+          <img class="hero-avatar" src="https://i.pravatar.cc/32?img=12" alt="user">
+        </div>
+        <div class="hero-sp-text"><strong>2,000+</strong> professionals stopped building agents from scratch</div>
+      </div>
+      <div class="hero-cta-group">
+        <a href="#pricing" class="hero-cta"><span class="hero-cta-icon">⚡</span> Stop Building From Scratch — $11 →</a>
+        <span class="hero-cta-note">Special price · Lifetime access · 7-day guarantee</span>
+      </div>
+    </div>
+    <div class="hero-right">
+      <img
+        src="https://raw.githubusercontent.com/Officialbrandt93/Claudeskills/main/AD7.png"
+        alt="Agents Pro Pack — 100+ AI Specialists"
+        style="width:100%;max-width:540px;border-radius:12px;display:block;"
+      >
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-item"><div class="stat-num">100+</div><div class="stat-label">Agents Ready</div></div>
+  <div class="stat-item"><div class="stat-num">10</div><div class="stat-label">Areas Covered</div></div>
+  <div class="stat-item"><div class="stat-num">2 min</div><div class="stat-label">To Install</div></div>
+  <div class="stat-item"><div class="stat-num">∞</div><div class="stat-label">Lifetime Access</div></div>
+</div>
+
+<!-- PAIN POINTS -->
+<div class="pain-section">
+  <div class="pain-headline">
+    <h2>You use Claude every day.<br>And still work the slowest way possible.</h2>
+    <p>The problem isn't Claude. It's that most people use it as a search bar, not as a team of specialists.</p>
+  </div>
+  <div class="pain-cards">
+    <div class="pain-card">
+      <span class="pain-card-icon">⏳</span>
+      <h3>You spend more time setting up than actually using it.</h3>
+      <p>Every session starts from zero. You're the prompt engineer — when you should be managing results, not building context.</p>
+    </div>
+    <div class="pain-card">
+      <span class="pain-card-icon">🎓</span>
+      <h3>Claude without an agent gives intern-level answers to specialist problems.</h3>
+      <p>Claude doesn't know you're a traffic manager, lawyer, or e-commerce owner. Without the right agent, it guesses every time.</p>
+    </div>
+    <div class="pain-card">
+      <span class="pain-card-icon">📊</span>
+      <h3>You should be managing results.<br>Not writing prompts.</h3>
+      <p>The problem isn't Claude. It's that you're the one responsible for turning Claude into a specialist — every time you open a new chat.</p>
+    </div>
+    <div class="pain-card">
+      <span class="pain-card-icon">🏃</span>
+      <h3>People with the right agents already delivered while you're still building context.</h3>
+      <p>The difference between using Claude and using Claude with specialized agents isn't marginal. It's days of operational advantage per week.</p>
+    </div>
+  </div>
+  <div class="pain-callout" style="max-width:1100px;margin:0 auto;padding:32px 60px 80px;">
+    <div class="callout-box">Claude is the engine. <strong>Without a specialized agent, you're running in first gear.</strong></div>
+  </div>
+</div>
+
+<!-- COMPARISON TABLE -->
+<section class="sec">
+  <span class="sec-label">The Real Gap</span>
+  <h2 class="sec-title">What actually changes when you<br>stop improvising.</h2>
+  <p class="sec-sub" style="margin:0;margin-top:8px;">The difference between a casual Claude user and someone running 100 pre-built specialists. It's not about time. It's about quality.</p>
+  <div class="compare-table-wrap">
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th class="col-without">Without Agent</th>
+          <th class="col-casual">Casual Claude User</th>
+          <th class="col-agents">With Claude Agents</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Creating a sales proposal</td>
+          <td class="col-without">2–3 hours, manual</td>
+          <td class="col-casual">45 min, needs editing</td>
+          <td class="col-agents">15 min, ready to send</td>
+        </tr>
+        <tr>
+          <td>Writing ad copy variations</td>
+          <td class="col-without">Full day, 1 version</td>
+          <td class="col-casual">1 hour, sounds like AI</td>
+          <td class="col-agents">10 min, 5 variations</td>
+        </tr>
+        <tr>
+          <td>Drafting a service contract</td>
+          <td class="col-without">Hire a lawyer or skip it</td>
+          <td class="col-casual">Generic template, risky</td>
+          <td class="col-agents">Professional, case-specific</td>
+        </tr>
+        <tr>
+          <td>Building financial projections</td>
+          <td class="col-without">Half a day in spreadsheets</td>
+          <td class="col-casual">1 hour, surface level</td>
+          <td class="col-agents">15 min, investor-ready</td>
+        </tr>
+        <tr>
+          <td>Running context session to session</td>
+          <td class="col-without">Starts over every time</td>
+          <td class="col-casual">Re-explains every chat</td>
+          <td class="col-agents last-row">Context already embedded</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- WHAT IS IT -->
+<div class="product-section" id="agents">
+  <div class="product-inner">
+    <div class="product-name">Claude Agents.</div>
+    <p class="product-tagline">100+ AI specialists. One for every function. Ready now.</p>
+    <div class="product-quote">
+      Imagine opening Claude tomorrow morning with 100+ specialists ready to work. No context to build. No prompt to adjust. You pick the copy agent — in 4 minutes, 5 headline variations. Go to the traffic agent — get creative analysis and audience suggestions. Go to the finance agent — revenue projection in minutes. <strong>This is what buying today activates.</strong>
+    </div>
+    <div class="product-pillars">
+      <div class="pillar">
+        <span class="pillar-icon">⚡</span>
+        <h3>Installs in 2 minutes. Works on the first run.</h3>
+        <p>No setup, no complex config. Copy the command or open the .md — the agent already has everything it needs to deliver results from the first execution.</p>
+      </div>
+      <div class="pillar">
+        <span class="pillar-icon">🎯</span>
+        <h3>Specialist output. Not generalist.</h3>
+        <p>Each agent carries the professional context of its function built in — what a specialist knows, the right questions, the correct format. You don't need to know how to make the agent work. It already knows.</p>
+      </div>
+      <div class="pillar">
+        <span class="pillar-icon">📦</span>
+        <h3>10 areas. No function left uncovered.</h3>
+        <p>Marketing, copy, sales, legal, finance, accounting, operations, HR, tech & AI — all in one place, with search and filters. One specialist for every decision in your business.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- AREAS -->
+<section class="sec">
+  <span class="sec-label">100+ Agents · 10 Areas</span>
+  <h2 class="sec-title">Which area stops consuming you first?</h2>
+  <p class="sec-sub" style="margin:0;margin-top:8px;">100+ agents. 10 areas. Each one built for a specific function — tested, documented and ready to install. You choose where to start.</p>
+  <div class="areas-grid">
+    <div class="area-card">
+      <span class="area-icon">📣</span>
+      <div class="area-name">Marketing</div>
+      <div class="area-count">15+ agents</div>
+      <div class="area-desc">Campaigns, positioning, branding and market analysis.</div>
+    </div>
+    <div class="area-card">
+      <span class="area-icon">💰</span>
+      <div class="area-name">Sales</div>
+      <div class="area-count">12+ agents</div>
+      <div class="area-desc">Scripts, proposals, objections and complete sales funnel.</div>
+    </div>
+    <div class="area-card">
+      <span class="area-icon">✍️</span>
+      <div class="area-name">Copy & Content</div>
+      <div class="area-count">18+ agents</div>
+      <div class="area-desc">VSLs, emails, headlines, scripts and sales pages.</div>
+    </div>
+    <div class="area-card">
+      <span class="area-icon">📊</span>
+      <div class="area-name">Paid Traffic</div>
+      <div class="area-count">10+ agents</div>
+      <div class="area-desc">Creatives, audiences, performance analysis and media.</div>
+    </div>
+    <div class="area-card">
+      <span class="area-icon">⚖️</span>
+      <div class="area-name">Legal</div>
+      <div class="area-count">8+ agents</div>
+      <div class="area-desc">Contracts, terms, risk analysis and compliance.</div>
+    </div>
+    <div class="area-card">
+      <span class="area-icon">💵</span>
+      <div class="area-name">Finance</div>
+      <div class="area-count">10+ agents</div>
+      <div class="area-desc">Cash flow, projections, cost and pricing.</div>
+    </div>
+    <div class="area-card">
+      <span class="area-icon">📋</span>
+      <div class="area-name">Accounting</div>
+      <div class="area-count">7+ agents</div>
+      <div class="area-desc">Reports, launches and fiscal control.</div>
+    </div>
+    <div class="area-card">
+      <span class="area-icon">⚙️</span>
+      <div class="area-name">Management & Ops</div>
+      <div class="area-count">12+ agents</div>
+      <div class="area-desc">Processes, OKRs, delegation and operational routines.</div>
+    </div>
+    <div class="area-card">
+      <span class="area-icon">👥</span>
+      <div class="area-name">HR & People</div>
+      <div class="area-count">8+ agents</div>
+      <div class="area-desc">Recruitment, onboarding and performance evaluation.</div>
+    </div>
+    <div class="area-card">
+      <span class="area-icon">🤖</span>
+      <div class="area-name">Technology & AI</div>
+      <div class="area-count">10+ agents</div>
+      <div class="area-desc">Prompts, automations, integrations and AI strategy.</div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<div class="steps-section">
+  <div class="steps-inner">
+    <span class="sec-label" style="text-align:center;display:block;">How It Works</span>
+    <h2 class="sec-title" style="text-align:center;">From zero to result<br>in under 5 minutes.</h2>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-circle">1</div>
+        <h3>Access the platform</h3>
+        <p>Immediate access after purchase. 100+ agents organized by area with search and filters.</p>
+      </div>
+      <div class="step">
+        <div class="step-circle">2</div>
+        <h3>Pick the right agent</h3>
+        <p>Each agent has a clear description of what it does, when to use it and what it delivers.</p>
+      </div>
+      <div class="step">
+        <div class="step-circle">3</div>
+        <h3>Install in one click</h3>
+        <p>Copy the command or download the .md. Under 2 minutes to run in Claude.</p>
+      </div>
+      <div class="step">
+        <div class="step-circle">4</div>
+        <h3>Execute. Get the result.</h3>
+        <p>Provide your business data. The agent delivers specialist output — no draft, no manual iteration.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BEFORE / AFTER -->
+<section class="ba-inner" style="padding:100px 60px;max-width:1100px;margin:0 auto;">
+  <span class="sec-label">The Difference</span>
+  <h2 class="sec-title">It's the difference between having an intern<br>and having a team of specialists.</h2>
+  <p style="font-size:15px;color:var(--fg2);max-width:520px;margin-top:8px;">This is what changes in practice when you stop improvising and start executing with the right agent.</p>
+  <div class="ba-grid">
+    <div class="ba-col bad">
+      <div class="ba-col-header"><span class="ba-x">✕</span> <span style="color:var(--fg3)">WITHOUT THE AGENTS</span></div>
+      <div class="ba-items">
+        <div class="ba-item red"><span class="ba-item-icon">—</span>Rebuilds context from zero every time — same task, every day</div>
+        <div class="ba-item red"><span class="ba-item-icon">—</span>Generalist response you still have to rewrite</div>
+        <div class="ba-item red"><span class="ba-item-icon">—</span>You're the prompt engineer AND the executor</div>
+        <div class="ba-item red"><span class="ba-item-icon">—</span>1 hour of work that should take 5 minutes</div>
+        <div class="ba-item red"><span class="ba-item-icon">—</span>Each area requires separate setup from zero</div>
+        <div class="ba-item red"><span class="ba-item-icon">—</span>Inconsistent results from session to session</div>
+        <div class="ba-item red"><span class="ba-item-icon">—</span>Competitor with agents already delivered while you're still building context</div>
+      </div>
+    </div>
+    <div class="ba-col good">
+      <div class="ba-col-header"><span class="ba-check">✓</span> <span style="color:var(--lime)">WITH AGENTS PRO PACK</span></div>
+      <div class="ba-items">
+        <div class="ba-item green"><span class="ba-item-icon">→</span>Specialized context already embedded in the agent</div>
+        <div class="ba-item green"><span class="ba-item-icon">→</span>Specialist output from the first execution</div>
+        <div class="ba-item green"><span class="ba-item-icon">→</span>You provide the data — the agent delivers the result</div>
+        <div class="ba-item green"><span class="ba-item-icon">→</span>5 minutes. Exact. No draft, no manual iteration</div>
+        <div class="ba-item green"><span class="ba-item-icon">→</span>100+ agents, one for each business function</div>
+        <div class="ba-item green"><span class="ba-item-icon">→</span>Validated and consistent result, always</div>
+        <div class="ba-item green"><span class="ba-item-icon">→</span>You execute faster and compete at another level</div>
+      </div>
+    </div>
+  </div>
+  <div class="ba-metrics">
+    <div class="ba-metric"><span class="ba-metric-num">10×</span><span class="ba-metric-label">faster per task</span></div>
+    <div class="ba-metric"><span class="ba-metric-num">100+</span><span class="ba-metric-label">specialists ready to install</span></div>
+    <div class="ba-metric"><span class="ba-metric-num">2 min</span><span class="ba-metric-label">to install any agent</span></div>
+    <div class="ba-metric"><span class="ba-metric-num">7 days</span><span class="ba-metric-label">guarantee, no questions</span></div>
+  </div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<div class="for-section">
+  <div class="for-inner">
+    <span class="for-label">— Who is Claude Agents for?</span>
+    <h2 class="for-title">For anyone who wants<br>AI working for them.</h2>
+    <p class="for-sub">Doesn't matter if you've been using Claude for months or just started. The agents do the work — you collect the result.</p>
+    <div class="for-grid">
+      <div class="for-item"><span class="for-arrow">→</span>You want AI to do the heavy lifting and deliver the result fast</div>
+      <div class="for-item"><span class="for-arrow">→</span>You want to automate marketing, sales, legal, finance, HR and more</div>
+      <div class="for-item"><span class="for-arrow">→</span>You already use Claude and want 10× faster results with specialized context</div>
+      <div class="for-item"><span class="for-arrow">→</span>You're starting with AI and want to go straight to what works, no learning curve</div>
+      <div class="for-item"><span class="for-arrow">→</span>You want specialist-level output without hiring a specialist or building anything from scratch</div>
+      <div class="for-item"><span class="for-arrow">→</span>You want a real, measurable return from the first week of use</div>
+    </div>
+    <p style="text-align:center;font-size:14px;color:var(--fg3);margin-top:32px;">The agents work. You manage the result. <strong style="color:var(--lime)">And you have 7 days to confirm all of this with zero risk.</strong></p>
+  </div>
+</div>
+
+
+
+<!-- BONUS SKILLS -->
+<section class="bonus-inner" style="padding:100px 60px;max-width:1100px;margin:0 auto;">
+  <div class="bonus-intro-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-bottom:48px;">
+    <div>
+      <span class="sec-label" style="display:block;margin-bottom:12px;">— EXCLUSIVE BONUS</span>
+      <h2 class="sec-title" style="margin-bottom:8px;">Buy today and also get<br><em style="font-style:normal;color:var(--lime);">1,000+ Claude Skills</em> for free.</h2>
+      <p style="font-size:15px;color:var(--fg2);margin-top:16px;">Every agent is already powerful on its own. But combined with 1,000+ ready-made Claude skills, you get a complete AI operating system for your entire business — from day one.</p>
+    </div>
+    <div>
+      <img
+        src="https://raw.githubusercontent.com/Officialbrandt93/ClaudeagentsPro/main/AD18.png"
+        alt="1,000+ Claude Skills — The Ultimate Bundle"
+        style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:12px;display:block;"
+      >
+    </div>
+  </div>
+
+  <!-- Pricing anchor -->
+  <div style="background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:24px 28px;margin-bottom:40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+    <div>
+      <div style="font-size:11px;color:var(--fg3);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:6px;">Total value of the bonus</div>
+      <div style="font-family:var(--display);font-size:28px;font-weight:700;color:var(--fg3);text-decoration:line-through;">$97</div>
+    </div>
+    <div style="text-align:center;">
+      <div style="font-size:12px;color:var(--fg2);margin-bottom:4px;">You pay</div>
+      <div style="font-family:var(--display);font-size:48px;font-weight:700;color:var(--lime);line-height:1;">FREE</div>
+      <div style="font-size:11px;color:var(--fg3);margin-top:4px;">When buying today</div>
+    </div>
+    <div style="text-align:right;">
+      <div style="font-size:13px;color:var(--fg2);margin-bottom:8px;">1,000+ skills included across:</div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end;">
+        <span style="font-size:10px;background:var(--bg4);border:1px solid var(--border2);color:var(--fg3);padding:3px 8px;border-radius:4px;">Marketing</span>
+        <span style="font-size:10px;background:var(--bg4);border:1px solid var(--border2);color:var(--fg3);padding:3px 8px;border-radius:4px;">Operations</span>
+        <span style="font-size:10px;background:var(--bg4);border:1px solid var(--border2);color:var(--fg3);padding:3px 8px;border-radius:4px;">Finance</span>
+        <span style="font-size:10px;background:var(--bg4);border:1px solid var(--border2);color:var(--fg3);padding:3px 8px;border-radius:4px;">Legal</span>
+        <span style="font-size:10px;background:var(--bg4);border:1px solid var(--border2);color:var(--fg3);padding:3px 8px;border-radius:4px;">Content & Copy</span>
+        <span style="font-size:10px;background:var(--bg4);border:1px solid var(--border2);color:var(--lime);padding:3px 8px;border-radius:4px;">+8 more</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3 bonus cards -->
+  <div class="bonus-grid">
+    <div class="bonus-card">
+      <span class="bonus-num">— BONUS 01</span>
+      <span class="bonus-icon">🎯</span>
+      <h3>100+ Marketing &amp; Sales Skills</h3>
+      <p>Ad copy, sales funnels, email sequences, cold outreach, landing pages, VSLs and much more — ready to deploy in seconds.</p>
+      <div class="bonus-checks">
+        <span class="bonus-check">Facebook Ads, Google Ads, TikTok Ads</span>
+        <span class="bonus-check">Sales page, email sequences, hooks</span>
+        <span class="bonus-check">Funnels, proposals, objection handling</span>
+      </div>
+      <div class="bonus-price-row">
+        <span class="bonus-price">$37 value</span>
+        <span class="bonus-free" style="font-size:14px;font-weight:700;color:var(--lime);">FREE</span>
+      </div>
+    </div>
+    <div class="bonus-card">
+      <span class="bonus-num">— BONUS 02</span>
+      <span class="bonus-icon">⚙️</span>
+      <h3>200+ Operations &amp; Finance Skills</h3>
+      <p>SOPs, financial models, cash flow, OKRs, process documentation, budgets and operational routines — all structured and ready.</p>
+      <div class="bonus-checks">
+        <span class="bonus-check">Financial projections and cash flow</span>
+        <span class="bonus-check">SOPs, OKRs, KPI dashboards</span>
+        <span class="bonus-check">Budget planning, pricing models</span>
+      </div>
+      <div class="bonus-price-row">
+        <span class="bonus-price">$37 value</span>
+        <span class="bonus-free" style="font-size:14px;font-weight:700;color:var(--lime);">FREE</span>
+      </div>
+    </div>
+    <div class="bonus-card">
+      <span class="bonus-num">— BONUS 03</span>
+      <span class="bonus-icon">✍️</span>
+      <h3>700+ Content, Legal &amp; HR Skills</h3>
+      <p>Blog posts, contracts, service agreements, job descriptions, onboarding, performance reviews — every business function covered.</p>
+      <div class="bonus-checks">
+        <span class="bonus-check">Contracts, NDAs, compliance</span>
+        <span class="bonus-check">Blog, social media, newsletters</span>
+        <span class="bonus-check">Recruiting, onboarding, HR docs</span>
+      </div>
+      <div class="bonus-price-row">
+        <span class="bonus-price">$23 value</span>
+        <span class="bonus-free" style="font-size:14px;font-weight:700;color:var(--lime);">FREE</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom callout -->
+  <div style="margin-top:32px;background:var(--lime-dim);border:1px solid var(--lime-border);border-radius:10px;padding:20px 24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+    <span style="font-size:24px;">⚡</span>
+    <div style="flex:1;">
+      <div style="font-family:var(--display);font-size:15px;font-weight:700;color:var(--fg);margin-bottom:3px;">100+ Agents + 1,000+ Skills = Your complete AI team.</div>
+      <div style="font-size:13px;color:var(--fg2);">The agents do the specialized work. The skills handle every recurring task in your business. Together, they replace an entire team.</div>
+    </div>
+    <a href="#pricing" class="hero-cta" style="font-size:13px;padding:12px 24px;white-space:nowrap;">Get Everything — $11 →</a>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<div class="test-section">
+  <div class="test-inner">
+    <span class="sec-label" style="text-align:center;display:block;">Real Numbers from Real Users</span>
+    <h2 class="sec-title" style="text-align:center;">Real numbers from people who were<br>exactly where you are now.</h2>
+    <p style="text-align:center;font-size:15px;color:var(--fg2);margin-top:8px;">They used Claude. Felt it could do more. Installed the agents. Here's what changed.</p>
+    <div class="test-grid">
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-quote">Switched from ChatGPT to Claude and installed the agents the same week. The difference is night and day. My content output doubled and I stopped wasting time re-explaining context every session.</p>
+        <div class="test-author-row">
+          <img src="https://i.pravatar.cc/36?img=5" alt="Liam Carter" style="width:36px;height:36px;border-radius:50%;object-fit:cover;flex-shrink:0;">
+          <div><div class="test-name">Liam Carter</div><div class="test-role">Marketing Manager · London, UK</div></div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-quote">The legal agents are unbelievable. I draft contracts in minutes that used to take half a day. My clients get faster turnarounds and I take on more work without burning out. Worth every cent.</p>
+        <div class="test-author-row">
+          <img src="https://i.pravatar.cc/36?img=57" alt="Aisha Nkosi" style="width:36px;height:36px;border-radius:50%;object-fit:cover;flex-shrink:0;">
+          <div><div class="test-name">Aisha Nkosi</div><div class="test-role">Corporate Lawyer · Johannesburg, SA</div></div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-quote">Running a small e-commerce business in Tokyo means wearing every hat. The finance and operations agents gave me back at least 8 hours a week. I feel like I finally have a team behind me.</p>
+        <div class="test-author-row">
+          <img src="https://i.pravatar.cc/36?img=25" alt="Kenji Yamamoto" style="width:36px;height:36px;border-radius:50%;object-fit:cover;flex-shrink:0;">
+          <div><div class="test-name">Kenji Yamamoto</div><div class="test-role">E-commerce Founder · Tokyo, Japan</div></div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-quote">I manage paid ads for 6 clients. The traffic and copy agents cut my creative production time by 60%. I used to dread ad refreshes — now I actually look forward to them. Completely changed how I work.</p>
+        <div class="test-author-row">
+          <img src="https://i.pravatar.cc/36?img=45" alt="Sofia Herrera" style="width:36px;height:36px;border-radius:50%;object-fit:cover;flex-shrink:0;">
+          <div><div class="test-name">Sofia Herrera</div><div class="test-role">Paid Ads Manager · Mexico City, MX</div></div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-quote">I closed three new clients in the same month I installed the sales agents. The proposals come out faster, they sound sharper, and follow-ups actually convert. Best $11 I've spent on my business.</p>
+        <div class="test-author-row">
+          <img src="https://i.pravatar.cc/36?img=11" alt="Marcus Webb" style="width:36px;height:36px;border-radius:50%;object-fit:cover;flex-shrink:0;">
+          <div><div class="test-name">Marcus Webb</div><div class="test-role">Sales Consultant · Toronto, Canada</div></div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-quote">Our HR team is just me. The recruitment agent alone saved me 5 hours on our last hire — job post, screening questions, offer letter, all done. I recovered the investment before the end of the first day.</p>
+        <div class="test-author-row">
+          <img src="https://i.pravatar.cc/36?img=49" alt="Priya Sharma" style="width:36px;height:36px;border-radius:50%;object-fit:cover;flex-shrink:0;">
+          <div><div class="test-name">Priya Sharma</div><div class="test-role">Head of HR · Startup · Mumbai, India</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PRICING -->
+<section class="pricing-section" id="pricing">
+  <div class="pricing-inner">
+    <p class="pricing-eyebrow">One consultation costs $300. 100+ AI specialists cost $11 — once.</p>
+    <h2 class="pricing-main-title">One Investment.<br>Lifetime Access.</h2>
+    <div class="pricing-card">
+      <div class="pricing-card-top">
+        <span class="price-bar-dot" style="background:#FF5F57;"></span>
+        <span class="price-bar-dot" style="background:#FEBC2E;"></span>
+        <span class="price-bar-dot" style="background:#28C840;"></span>
+        <span class="price-bar-title">claude@skillspackai ~ % cat pricing.conf</span>
+      </div>
+      <div class="pricing-body">
+        <div class="pricing-items">
+          <div class="pricing-item"><span class="pricing-item-name">Claude Agents — 100+ agents, lifetime access</span><span class="pricing-item-val">$97</span></div>
+          <div class="pricing-item"><span class="pricing-item-name" style="color:var(--lime);">★ BONUS — 1,000+ Claude Skills</span><span class="pricing-item-val">$97</span></div>
+        </div>
+        <div class="pricing-divider"></div>
+        <div class="pricing-total-row">
+          <span class="pricing-total-label">Total Value</span>
+          <span class="pricing-total-val">$194</span>
+        </div>
+        <div class="pricing-cta-block">
+          <div class="price-from">From $194 for only</div>
+          <div class="price-big">$11</div>
+          <div class="price-note">One-time payment · Lifetime access · Special offer</div>
+          <a href="https://go.centerpag.com/PPU38CQCK95" target="_blank" rel="noopener" class="price-cta-btn">Install My 100+ Agents — $11 →</a>
+          <p class="price-cta-sub">Secure payment · Access in under 5 minutes · 7-day guarantee — if you don't save time, money back · Special comeback offer</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<div class="guarantee-section">
+  <div class="guarantee-inner">
+    <div class="guarantee-icon-wrap">🛡️</div>
+    <span class="guarantee-badge">Unconditional Guarantee</span>
+    <h2 class="guarantee-title">Use for 7 days. If you don't save<br>at least 1 hour, <span>money back.</span></h2>
+    <p class="guarantee-text">Install. Use across any area of your business. If after 7 days you haven't saved at least one hour of work, email <strong style="color:var(--lime)">contato@skillspackai.com</strong>. We refund everything — no form, no questions, no delays.</p>
+    <div class="guarantee-checks">
+      <div class="g-check"><span class="g-check-icon">✓</span>Immediate access to all 100+ agents</div>
+      <div class="g-check"><span class="g-check-icon">✓</span>Use in as many areas as you want for 7 days</div>
+      <div class="g-check"><span class="g-check-icon">✓</span>Didn't save time? Money back — no justification needed</div>
+      <div class="g-check"><span class="g-check-icon">✓</span>100% back within 24h — no bureaucracy</div>
+    </div>
+    <p style="font-style:italic;color:var(--fg3);margin-top:28px;font-size:13px;">The risk is 100% ours. The result is 100% yours.</p>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="faq-inner">
+    <h2 class="sec-title">Frequently Asked<br>Questions.</h2>
+    <div class="faq-list">
+      <div class="faq-item"><button class="faq-q" onclick="tf(this)">Which version of Claude do the agents work with?<span class="faq-plus">+</span></button><div class="faq-a">All agents work with Claude.ai (free and paid), Claude Code and Cowork. On Claude.ai web, the agent is detected automatically. On Claude Code, you invoke it with /agent-name.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="tf(this)">Do I need to know how to program to install the agents?<span class="faq-plus">+</span></button><div class="faq-a">No. Installing an agent takes under 2 minutes and requires zero technical knowledge. You copy a command or download a .md file. There's a step-by-step guide with screenshots included.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="tf(this)">Are agents updated over time?<span class="faq-plus">+</span></button><div class="faq-a">Yes. All updates are already included in your access. New agents released go directly into the platform — at no extra cost. Lifetime access means exactly that.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="tf(this)">How do I receive access after purchase?<span class="faq-plus">+</span></button><div class="faq-a">Immediately after payment confirmation. You'll receive the access link by email within minutes. Access is complete and immediate — no waiting period.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="tf(this)">Does it work for my type of business?<span class="faq-plus">+</span></button><div class="faq-a">If you use Claude for anything in your business — marketing, sales, content, operations, legal, finance — yes. The platform covers 10 areas and 100+ specific use cases designed for real business contexts.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="tf(this)">Is this different from a generic prompt pack?<span class="faq-plus">+</span></button><div class="faq-a">Completely. A prompt pack is a text file you copy and paste. An agent is a complete system — it carries the professional context of its function, asks the right questions, formats correctly and delivers specialist output from the first execution. It's not a starting point. It's the result.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="tf(this)">Can I share access with my team?<span class="faq-plus">+</span></button><div class="faq-a">Yes. The agents can be used by your whole team, creating a consistent standard for everyone — same quality output, same process, no variation between sessions or people.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="tf(this)">What if I don't like it? How does the refund work?<span class="faq-plus">+</span></button><div class="faq-a">7-day 100% money-back guarantee. Email contato@skillspackai.com — we process the refund within 24 hours. No form, no questions, no runaround. The risk is entirely ours.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-section" style="background:var(--bg2);border-top:1px solid var(--border);">
+  <div class="final-inner">
+    <h2 class="final-title">Will you still be<br>building prompts from<br>scratch <em>tomorrow?</em></h2>
+    <p class="final-sub">Every week without specialized agents is hours spent doing what should be automatic. 100+ agents. 10 areas. Once. Forever. With 7 days of guarantee — no questions, no bureaucracy.</p>
+    <a href="#pricing" class="hero-cta" style="display:inline-flex;font-size:15px;padding:18px 36px;"><span>⚡</span> Stop Building From Scratch — $11 →</a>
+    <p class="final-note">access in minutes · 7-day guarantee · no questions</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="nav-logo" style="display:inline-flex;">
+        <div class="nav-logo-icon">A</div>
+        <div class="nav-logo-text">Agents <span>Pro Pack</span></div>
+      </a>
+      <p>Specialized AI agent platform for every area of your business. Built on Claude, ready to install.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Platform</h4>
+      
+      <a href="#">Agents</a>
+      <a href="#">Price</a>
+      <a href="#">Get Started</a>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="#">contato@skillspackai.com</a>
+      <a href="#">Instagram</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 Skills Pack AI. All rights reserved.</span>
+  </div>
+  <p class="footer-disclaimer">Legal Notice: This site is not affiliated with Facebook, Instagram or Meta. The results mentioned here are real, but vary from person to person. This product offers tools and educational content with the objective of increasing productivity, without promising guaranteed earnings. Skills Pack AI is an educational product that offers strategic AI agent models for personal or professional use with tools like Claude. It is not a consulting, advisory or production service. The use of the agents is entirely the user's responsibility, who must apply, review and adapt results according to their own judgment. Skills Pack AI is not responsible for decisions or any other type of content generated from the agents provided.</p>
+</footer>
+
+<!-- STICKY BOTTOM BAR -->
+<div class="sticky-bar">
+  <div class="sticky-bar-left">
+    <span>🔥 SPECIAL OFFER</span>
+    <strong>100+ agents · access forever · $11 only today</strong>
+    <span style="color:var(--border2)">|</span>
+    <span>Regular price: $19</span>
+  </div>
+  <div class="sticky-bar-right">
+    <span class="sticky-bar-price">$11</span>
+    <a href="#pricing" class="sticky-bar-cta">Get Agents — $11 →</a>
+  </div>
+</div>
+
+<script>
+function tf(btn){
+  var item=btn.parentElement,open=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(function(el){el.classList.remove('open');});
+  if(!open)item.classList.add('open');
+}
+
+// Mock platform tab switching
+document.querySelectorAll('.mock-tab').forEach(function(tab){
+  tab.addEventListener('click',function(){
+    document.querySelectorAll('.mock-tab').forEach(function(t){t.classList.remove('active');});
+    this.classList.add('active');
+  });
+});
+
+// Show sticky bar after third section
+(function(){
+  var stickyBar = document.querySelector('.sticky-bar');
+  var sections = document.querySelectorAll('section, .pain-section, .dark-block, .for-section, .steps-section');
+  var threshold = 0;
+
+  function checkScroll(){
+    // Show after scrolling past ~3 viewport heights
+    if(window.scrollY > window.innerHeight * 2.5){
+      stickyBar.classList.add('visible');
+    } else {
+      stickyBar.classList.remove('visible');
+    }
+  }
+  window.addEventListener('scroll', checkScroll, {passive:true});
+})();
+</script>
+</body>
+</html>
