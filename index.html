@@ -970,9 +970,23 @@ footer{border-top:1px solid var(--border);padding:60px;background:var(--bg2);}
     <h2 class="sec-title" style="text-align:center;margin-bottom:8px;">Two more bonuses to make sure<br>you <em>actually get results</em>.</h2>
     <p style="text-align:center;font-size:15px;color:var(--fg2);margin-bottom:60px;">Having agents is just step one. These two guides make sure you activate them — and turn them into income.</p>
 
+    <style>
+      .bonus-kit-card { display:grid; grid-template-columns:1fr 1fr; align-items:center; background:var(--bg3); border:1px solid var(--border); border-radius:14px; overflow:hidden; margin-bottom:32px; }
+      .bonus-kit-text { padding:40px; }
+      .bonus-kit-img { background:var(--bg4); display:flex; align-items:center; justify-content:center; min-height:320px; padding:32px; }
+      .bonus-kit-img img { width:100%; max-width:380px; border-radius:10px; display:block; box-shadow:0 20px 60px rgba(0,0,0,0.5); }
+      .bonus-kit-img.right { border-left:1px solid var(--border); }
+      .bonus-kit-img.left  { border-right:1px solid var(--border); }
+      @media(max-width:700px){
+        .bonus-kit-card { grid-template-columns:1fr; }
+        .bonus-kit-img  { min-height:unset; padding:24px; order:-1 !important; border:none !important; border-bottom:1px solid var(--border) !important; }
+        .bonus-kit-text { padding:24px; }
+      }
+    </style>
+
     <!-- BONUS #1 — AI Team Activation Kit -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-bottom:60px;background:var(--bg3);border:1px solid var(--border);border-radius:14px;overflow:hidden;">
-      <div style="padding:40px;">
+    <div class="bonus-kit-card">
+      <div class="bonus-kit-text">
         <span style="font-size:10px;color:var(--fg3);text-transform:uppercase;letter-spacing:0.15em;display:block;margin-bottom:16px;">— BONUS #1</span>
         <h3 style="font-family:var(--display);font-size:clamp(22px,2.5vw,30px);font-weight:800;line-height:1.1;letter-spacing:-0.02em;margin-bottom:12px;">AI Team Activation Kit</h3>
         <p style="font-size:13px;color:var(--fg2);line-height:1.7;margin-bottom:20px;">Most people buy an AI tool and never use it consistently. Not because they're lazy — because they never had a clear system to follow. The AI Team Activation Kit solves that. It's a complete step-by-step guide that shows you exactly how to install your Claude Agents, organize them by category and priority, and start getting real results in less than 10 minutes.</p>
@@ -990,25 +1004,17 @@ footer{border-top:1px solid var(--border);padding:60px;background:var(--bg2);}
           <span style="font-size:16px;font-weight:700;color:var(--lime);">FREE</span>
         </div>
       </div>
-      <div style="background:var(--bg4);border-left:1px solid var(--border);display:flex;align-items:center;justify-content:center;min-height:360px;padding:32px;">
-        <img
-          src="https://raw.githubusercontent.com/Officialbrandt93/ClaudeagentsPro/main/converida1.webp"
-          alt="AI Team Activation Kit — Mockup"
-          style="width:100%;max-width:380px;border-radius:10px;display:block;box-shadow:0 20px 60px rgba(0,0,0,0.5);"
-        >
+      <div class="bonus-kit-img right">
+        <img src="https://raw.githubusercontent.com/Officialbrandt93/ClaudeagentsPro/main/converida1.webp" alt="AI Team Activation Kit — Mockup">
       </div>
     </div>
 
     <!-- BONUS #2 — AI Cashflow Starter Kit -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;background:var(--bg3);border:1px solid var(--border);border-radius:14px;overflow:hidden;">
-      <div style="background:var(--bg4);border-right:1px solid var(--border);display:flex;align-items:center;justify-content:center;min-height:360px;padding:32px;">
-        <img
-          src="https://raw.githubusercontent.com/Officialbrandt93/ClaudeagentsPro/main/converida.webp"
-          alt="AI Cashflow Starter Kit — Mockup"
-          style="width:100%;max-width:380px;border-radius:10px;display:block;box-shadow:0 20px 60px rgba(0,0,0,0.5);"
-        >
+    <div class="bonus-kit-card">
+      <div class="bonus-kit-img left" style="order:0;">
+        <img src="https://raw.githubusercontent.com/Officialbrandt93/ClaudeagentsPro/main/converida.webp" alt="AI Cashflow Starter Kit — Mockup">
       </div>
-      <div style="padding:40px;">
+      <div class="bonus-kit-text">
         <span style="font-size:10px;color:var(--fg3);text-transform:uppercase;letter-spacing:0.15em;display:block;margin-bottom:16px;">— BONUS #2</span>
         <h3 style="font-family:var(--display);font-size:clamp(22px,2.5vw,30px);font-weight:800;line-height:1.1;letter-spacing:-0.02em;margin-bottom:12px;">AI Cashflow Starter Kit</h3>
         <p style="font-size:13px;color:var(--fg2);line-height:1.7;margin-bottom:20px;">Having Claude Agents is powerful. Knowing how to turn them into income is even better. This practical guide shows you how to use your agents to create simple services you can offer to small businesses, coaches, ecommerce stores, and local entrepreneurs — starting this week, from home, with no prior client experience required.</p>
