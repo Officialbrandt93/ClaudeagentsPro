@@ -1,0 +1,857 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>139 AI Specialists For Claude</title>
+<style>
+  :root{
+    --bg: #08080b;
+    --bg-soft: #0f0f14;
+    --card: #16161d;
+    --card-border: #262631;
+    --purple: #8B41AC;
+    --purple-2: #A052B1;
+    --orange: #f4791f;
+    --red: #e8442f;
+    --text: #f5f5f7;
+    --text-dim: #a3a3ad;
+    --text-dimmer: #6f6f7a;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height:1.5;
+  }
+  .container{ max-width:1100px; margin:0 auto; padding:0 24px; }
+  section{ padding:72px 0; }
+  h1,h2,h3,h4{ line-height:1.15; font-weight:600; }
+  a{ text-decoration:none; color:inherit; }
+  ul{ list-style:none; }
+
+  /* ===== Marquee banner ===== */
+  .marquee-banner{
+    background: linear-gradient(90deg, var(--purple), var(--red), var(--orange), var(--purple));
+    padding:10px 0;
+    overflow:hidden;
+    white-space:nowrap;
+  }
+  .marquee-banner .track{
+    display:inline-block;
+    animation: scroll-left 20s linear infinite;
+    font-size:13px;
+    font-weight:600;
+  }
+  .marquee-banner span{ margin-right:40px; }
+  .marquee-banner .pill{
+    background:rgba(0,0,0,.25);
+    padding:2px 10px;
+    border-radius:20px;
+    margin:0 6px;
+  }
+  @keyframes scroll-left{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
+
+  /* ===== Buttons ===== */
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background: linear-gradient(90deg, var(--orange), var(--red));
+    color:#fff;
+    font-weight:700;
+    font-size:15px;
+    padding:14px 26px;
+    border-radius:10px;
+    box-shadow: 0 8px 24px rgba(232,68,47,.25);
+  }
+  .btn .icon{
+    width:22px; height:22px;
+    display:flex; align-items:center; justify-content:center;
+    background:rgba(0,0,0,.25);
+    border-radius:6px;
+    font-size:13px;
+  }
+  .btn-wrap{ display:flex; flex-direction:column; align-items:flex-start; gap:8px; }
+  .btn-note{ font-size:12px; color:var(--text-dimmer); padding-left:2px; }
+
+  /* ===== Hero ===== */
+  .hero{
+    padding-top:56px;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:48px;
+    align-items:center;
+  }
+  .badge-rating{
+    display:inline-flex; align-items:center; gap:8px;
+    background: var(--card);
+    border:1px solid var(--card-border);
+    padding:6px 14px;
+    border-radius:20px;
+    font-size:13px;
+    color: var(--text-dim);
+    margin-bottom:24px;
+  }
+  .badge-rating .stars{ color:#f5a623; }
+  .eyebrow{ color: var(--text-dim); font-size:16px; margin-bottom:12px; }
+  .h1{ font-size:44px; margin-bottom:16px; }
+  .h1-sub{ font-size:20px; font-style:italic; color:var(--text-dim); margin-bottom:20px; }
+  .sub-paragraph{ color:var(--text-dim); font-size:16px; margin-bottom:8px; max-width:480px; }
+  .fine-print{ font-size:13px; color:var(--text-dimmer); margin:16px 0 28px; }
+
+  .included-box{
+    margin-top:32px;
+    background: var(--card);
+    border:1px solid var(--card-border);
+    border-radius:12px;
+    padding:16px 20px;
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+  }
+  .included-box .lock{ font-size:18px; margin-top:2px; }
+  .included-box strong{ color:#fff; }
+  .included-box .note{ font-size:13px; color:var(--text-dimmer); margin-top:4px; }
+
+  .hero-visual{
+    position:relative;
+    display:flex; justify-content:center; align-items:center;
+    min-height:420px;
+  }
+  .glow{
+    position:absolute;
+    width:420px; height:420px;
+    background: radial-gradient(circle, rgba(139,65,172,.45), transparent 70%);
+    filter: blur(10px);
+  }
+  .product-box{
+    position:relative;
+    width:220px;
+    background: linear-gradient(160deg, #1c1c26, #0c0c10);
+    border:1px solid var(--card-border);
+    border-radius:14px;
+    padding:24px 20px;
+    box-shadow: 0 30px 60px rgba(0,0,0,.5);
+  }
+  .product-box .dots{ color:var(--purple-2); font-size:12px; margin-bottom:14px; letter-spacing:2px;}
+  .product-box h4{ font-size:18px; margin-bottom:10px; }
+  .product-box .tag{ font-size:11px; color:var(--text-dimmer); }
+  .float-chip{
+    position:absolute;
+    background: var(--card);
+    border:1px solid var(--card-border);
+    border-radius:10px;
+    padding:8px 12px;
+    font-size:11px;
+    color:var(--text-dim);
+    box-shadow:0 10px 20px rgba(0,0,0,.4);
+  }
+  .chip-1{ top:10px; left:-30px; }
+  .chip-2{ bottom:30px; left:-50px; }
+  .chip-3{ bottom:-10px; right:-40px; }
+  .center-10x{
+    position:absolute;
+    bottom:-40px;
+    text-align:center;
+    color:var(--purple-2);
+    font-size:32px;
+    font-weight:800;
+  }
+
+  /* ===== Section headings ===== */
+  .section-head{ text-align:center; max-width:720px; margin:0 auto 48px; }
+  .section-head h2{ font-size:32px; margin-bottom:14px; }
+  .section-head p{ color:var(--text-dim); font-size:16px; }
+  .h2{ font-size:32px; }
+
+  /* ===== Comparison table ===== */
+  .compare-table{ margin-top:8px; }
+  .compare-row{
+    display:grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap:16px;
+    padding:18px 0;
+    border-bottom:1px solid var(--card-border);
+    align-items:center;
+  }
+  .compare-row.head{ color:var(--text-dimmer); font-size:13px; text-transform:uppercase; letter-spacing:.5px; }
+  .compare-row .task{ color:#fff; font-weight:500; }
+  .compare-row .cell{ color: var(--text-dim); font-size:14px; }
+  .compare-row .cell.winner{
+    border:1px solid var(--purple);
+    color:var(--purple-2);
+    border-radius:8px;
+    padding:8px 12px;
+    font-weight:600;
+    background: rgba(139,65,172,.08);
+  }
+  .compare-row.head .winner-head{ color:var(--purple-2); }
+
+  /* ===== Features / accordion ===== */
+  .two-col{ display:grid; grid-template-columns: 1fr 1fr; gap:48px; align-items:start; }
+  .feature-item{
+    display:flex; justify-content:space-between; align-items:center;
+    background:var(--card);
+    border:1px solid var(--card-border);
+    border-radius:10px;
+    padding:16px 20px;
+    margin-bottom:12px;
+  }
+  .feature-item .left{ display:flex; align-items:center; gap:12px; font-weight:500; }
+  .feature-item .arrow{ color:var(--text-dimmer); }
+
+  /* ===== Testimonial slider ===== */
+  .testimonial-card{
+    background: var(--card);
+    border:1px solid var(--card-border);
+    border-radius:16px;
+    padding:40px;
+    text-align:center;
+    max-width:760px;
+    margin:0 auto;
+    position:relative;
+  }
+  .testimonial-card .name{ font-weight:700; margin-bottom:2px; }
+  .testimonial-card .role{ font-size:13px; color:var(--text-dimmer); margin-bottom:10px; }
+  .testimonial-card .stars{ color:#f5a623; margin-bottom:18px; }
+  .testimonial-card .quote{ font-size:18px; color:var(--text); line-height:1.6; }
+  .dots-nav{ text-align:center; margin-top:20px; color:var(--text-dimmer); }
+
+  /* ===== Stats ===== */
+  .stats-row{ display:grid; grid-template-columns:1fr 1fr; gap:24px; margin:40px 0; }
+  .stat-card{
+    background:var(--card);
+    border:1px solid var(--card-border);
+    border-radius:14px;
+    padding:32px;
+  }
+  .stat-card .num{ font-size:48px; font-weight:800; color:var(--purple-2); margin-bottom:8px; }
+  .stat-card .desc{ color:var(--text-dim); font-size:14px; }
+
+  /* ===== Benefit cards ===== */
+  .benefit-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+  .benefit-card{
+    background:var(--card);
+    border:1px solid var(--card-border);
+    border-radius:14px;
+    padding:24px;
+  }
+  .benefit-card .icon{ font-size:22px; margin-bottom:14px; }
+  .benefit-card h4{ font-size:17px; margin-bottom:8px; }
+  .benefit-card p{ font-size:14px; color:var(--text-dim); }
+
+  /* ===== Checklist ===== */
+  .checklist-grid{ display:grid; grid-template-columns:1fr 1fr; gap:40px; margin:32px 0; }
+  .check-item{ display:flex; gap:10px; margin-bottom:14px; font-size:15px; color:var(--text); }
+  .check-item .ok{ color:var(--purple-2); }
+  .check-item .no{ color:var(--red); }
+
+  /* ===== Category boxes ===== */
+  .category-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:32px 0; }
+  .category-box{
+    background: linear-gradient(160deg,#1c1c26,#0c0c10);
+    border:1px solid var(--card-border);
+    border-radius:12px;
+    padding:22px;
+    min-height:150px;
+    display:flex; flex-direction:column;
+    transition: border-color .2s ease;
+  }
+  .category-box:hover{ border-color: var(--purple); }
+  .category-box .cat-icon{ font-size:22px; margin-bottom:10px; }
+  .category-box .cat-count{
+    display:inline-block; align-self:flex-start;
+    font-size:11px; font-weight:700; color:var(--purple-2);
+    background: rgba(139,65,172,.12);
+    border-radius:20px; padding:3px 10px; margin-bottom:10px;
+  }
+  .category-box h5{ font-size:15px; margin-bottom:6px; }
+  .category-box p{ font-size:12px; color:var(--text-dimmer); }
+
+  /* ===== Tech sub-category strip ===== */
+  .subcat-strip{ display:grid; grid-template-columns:repeat(7,1fr); gap:12px; margin-top:16px; }
+  .subcat-item{
+    background: var(--card);
+    border:1px solid var(--card-border);
+    border-radius:10px;
+    padding:14px 12px;
+    text-align:center;
+  }
+  .subcat-item .n{ font-size:20px; font-weight:800; color:var(--purple-2); }
+  .subcat-item .label{ font-size:11px; color:var(--text-dimmer); margin-top:4px; }
+
+  /* ===== Reviews grid ===== */
+  .review-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:32px; }
+  .review-card{
+    background:var(--card);
+    border:1px solid var(--card-border);
+    border-radius:12px;
+    padding:20px;
+  }
+  .review-card .who{ display:flex; align-items:center; gap:10px; margin-bottom:8px; font-weight:600; font-size:14px;}
+  .review-card .avatar{
+    width:32px; height:32px; border-radius:50%;
+    background:linear-gradient(135deg,var(--purple),var(--orange));
+    display:flex; align-items:center; justify-content:center;
+    font-size:12px; font-weight:700;
+  }
+  .review-card .stars{ color:#f5a623; font-size:13px; margin-bottom:10px; }
+  .review-card p{ font-size:13px; color:var(--text-dim); }
+
+  /* ===== Steps ===== */
+  .steps-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:32px; }
+  .step-card{
+    border:1px solid var(--purple);
+    background: rgba(139,65,172,.06);
+    border-radius:14px;
+    padding:28px;
+  }
+  .step-card .num{ font-size:40px; font-weight:800; color:var(--text-dimmer); margin-bottom:10px; }
+  .step-card p{ font-size:14px; color:var(--text-dim); }
+
+  /* ===== Pricing ===== */
+  .pricing-head{ text-align:center; margin-bottom:40px; }
+  .pricing-tag{ color:var(--purple-2); font-weight:600; margin-top:8px; }
+
+  .main-offer{
+    max-width:520px; margin:0 auto;
+    background: var(--card);
+    border:1px solid var(--purple);
+    box-shadow:0 0 0 1px var(--purple), 0 30px 60px rgba(139,65,172,.15);
+    border-radius:16px;
+    padding:36px;
+    position:relative;
+  }
+  .best-value{
+    position:absolute; top:-14px; left:50%; transform:translateX(-50%);
+    background: linear-gradient(90deg,var(--purple),var(--purple-2));
+    padding:6px 16px; border-radius:20px; font-size:12px; font-weight:700; white-space:nowrap;
+  }
+  .main-offer h3{ font-size:20px; margin-bottom:14px; text-align:center; }
+  .main-offer .price-row{ text-align:center; margin-bottom:6px; }
+  .main-offer .old-price{ text-decoration:line-through; color:var(--text-dimmer); font-size:18px; margin-right:8px;}
+  .main-offer .price{ font-size:48px; font-weight:800; }
+  .main-offer .save{ text-align:center; font-size:13px; color:var(--purple-2); margin-bottom:22px; }
+  .main-offer ul{ margin-bottom:20px; }
+  .main-offer li{ display:flex; gap:8px; font-size:14px; color:var(--text-dim); margin-bottom:10px; }
+  .main-offer li .ok{ color:var(--purple-2); }
+  .cta-full{
+    display:block; text-align:center;
+    background: linear-gradient(90deg, var(--orange), var(--red));
+    font-weight:700; padding:14px; border-radius:10px; margin-bottom:10px;
+  }
+  .risk-free{ text-align:center; font-size:12px; color:var(--text-dimmer); font-style:italic; }
+
+  .checkout-bonus-strip{
+    background: rgba(139,65,172,.08);
+    border:1px solid var(--card-border);
+    border-radius:10px;
+    padding:16px 18px;
+    margin-bottom:18px;
+  }
+  .checkout-bonus-title{ font-size:12px; font-weight:700; color:var(--purple-2); text-transform:uppercase; letter-spacing:.3px; margin-bottom:10px; }
+  .checkout-bonus-row{ display:flex; align-items:center; gap:8px; font-size:14px; color:var(--text); margin-bottom:8px; }
+  .checkout-bonus-row:last-child{ margin-bottom:0; }
+  .checkout-bonus-row .ok{ color:var(--purple-2); }
+  .checkout-bonus-row .strike{ margin-left:auto; text-decoration:line-through; color:var(--text-dimmer); font-size:12px; }
+
+  /* ===== Bonus cards ===== */
+  .bonus-header{ text-align:center; margin:56px 0 28px; }
+  .bonus-header .buy-today{ color:var(--purple-2); font-weight:700; font-size:14px; letter-spacing:.5px; text-transform:uppercase; margin-bottom:6px; }
+  .bonus-header h3{ font-size:24px; margin-bottom:12px; }
+  .bonus-header p{ color:var(--text-dim); max-width:640px; margin:0 auto; font-size:14px; }
+
+  .bonus-value-card{
+    max-width:520px; margin:0 auto 24px;
+    background: rgba(139,65,172,.08);
+    border:1px solid var(--card-border);
+    border-radius:14px;
+    padding:22px;
+    display:flex; justify-content:space-between; align-items:center; gap:16px;
+  }
+  .bonus-value-card .label{ font-size:13px; color:var(--text-dim); }
+  .bonus-value-card .tags{ font-size:12px; color:var(--text-dimmer); margin-top:6px; }
+  .bonus-value-card .figures{ text-align:right; }
+  .bonus-value-card .old{ text-decoration:line-through; color:var(--text-dimmer); font-size:15px; }
+  .bonus-value-card .free{ color:var(--purple-2); font-weight:800; font-size:20px; }
+
+  .bonus-card{
+    max-width:520px; margin:0 auto 20px;
+    background: var(--card);
+    border:1px solid var(--card-border);
+    border-radius:14px;
+    padding:26px;
+  }
+  .bonus-card .tag-num{
+    display:inline-block; font-size:11px; font-weight:700; color:var(--purple-2);
+    background:rgba(139,65,172,.12); border-radius:20px; padding:3px 10px; margin-bottom:12px;
+  }
+  .bonus-card h4{ font-size:18px; margin-bottom:10px; }
+  .bonus-card p{ font-size:14px; color:var(--text-dim); margin-bottom:14px; }
+  .bonus-card ul{ margin-bottom:16px; }
+  .bonus-card li{ font-size:13px; color:var(--text-dim); margin-bottom:8px; display:flex; gap:8px; }
+  .bonus-card li .ok{ color:var(--purple-2); }
+  .bonus-card .price-line{ display:flex; align-items:baseline; gap:10px; }
+  .bonus-card .price-line .old{ text-decoration:line-through; color:var(--text-dimmer); font-size:14px; }
+  .bonus-card .price-line .free{ color:var(--purple-2); font-weight:800; font-size:16px; }
+
+  .launch-warning{ text-align:center; margin-top:32px; color:var(--text-dim); font-size:15px; }
+  .launch-warning strong{ color:var(--orange); }
+
+  /* ===== Founder ===== */
+  .founder-box{
+    background:var(--card); border:1px solid var(--card-border);
+    border-radius:16px; padding:40px;
+  }
+  .founder-head{ display:flex; align-items:center; gap:16px; margin-bottom:24px; }
+  .founder-avatar{
+    width:56px; height:56px; border-radius:50%;
+    background:linear-gradient(135deg,var(--purple),var(--orange));
+  }
+  .founder-box p{ color:var(--text-dim); margin-bottom:14px; font-size:15px; line-height:1.7; }
+
+  /* ===== FAQ ===== */
+  .faq-item{
+    border-bottom:1px solid var(--card-border);
+    padding:18px 0;
+  }
+  .faq-item .q{
+    display:flex; justify-content:space-between; align-items:center;
+    cursor:pointer; font-weight:500; font-size:15px;
+  }
+  .faq-item .a{
+    max-height:0; overflow:hidden; transition:max-height .3s ease;
+    color:var(--text-dim); font-size:14px;
+  }
+  .faq-item.open .a{ max-height:300px; padding-top:12px; }
+  .faq-item .plus{ transition:transform .3s ease; color:var(--purple-2); }
+  .faq-item.open .plus{ transform:rotate(45deg); }
+
+  /* ===== Footer ===== */
+  .footer-cta{
+    background: radial-gradient(circle at top, rgba(139,65,172,.25), transparent 60%);
+    border:1px solid var(--card-border);
+    border-radius:20px;
+    text-align:center;
+    padding:56px 32px;
+  }
+  .footer-cta h2{ margin-bottom:14px; }
+  .footer-cta p{ color:var(--text-dim); max-width:520px; margin:0 auto 28px; }
+  .footer-legal{
+    text-align:center; color:var(--text-dimmer); font-size:12px;
+    margin-top:40px; line-height:1.8;
+  }
+  .footer-legal a{ color:var(--text-dim); }
+  .footer-legal .links a{ margin:0 6px; }
+
+  @media (max-width: 860px){
+    .hero, .two-col, .checklist-grid, .pricing-grid{ grid-template-columns:1fr; }
+    .compare-row{ grid-template-columns:1fr 1fr; }
+    .benefit-grid, .category-grid, .review-grid, .steps-grid, .stats-row{ grid-template-columns:1fr 1fr; }
+    .h1{ font-size:32px; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="marquee-banner">
+    <div class="track">
+      <span class="pill">LAUNCH SALE</span> 139 AI SPECIALISTS FOR CLAUDE
+      <span class="pill">80% OFF</span> LIFETIME ACCESS — NO MONTHLY FEES
+      <span class="pill">LAUNCH SALE</span> 139 AI SPECIALISTS FOR CLAUDE
+      <span class="pill">80% OFF</span> LIFETIME ACCESS — NO MONTHLY FEES
+      <span class="pill">LAUNCH SALE</span> 139 AI SPECIALISTS FOR CLAUDE
+      <span class="pill">80% OFF</span> LIFETIME ACCESS — NO MONTHLY FEES
+    </div>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section>
+    <div class="container hero">
+      <div>
+        <div class="badge-rating"><span class="stars">★★★★★</span> 4.7 &nbsp;|&nbsp; Trusted by 70,000+ entrepreneurs and marketers</div>
+        <div class="eyebrow">Heard of OR just switched to Claude?</div>
+        <h1 class="h1">Turn Claude Into a High-Performing AI Team.</h1>
+        <p class="h1-sub">139 Specialists to 10x Your Output and Cut Your Costs by 50%</p>
+        <p class="sub-paragraph">One specialist for every part of your business. Your social media manager, copywriter, strategist, sales coach, analyst, HR lead and 65 more.</p>
+        <p class="sub-paragraph" style="font-weight:600; color:#fff;">One payment. No monthly fees. Results from day one.</p>
+
+        <div class="btn-wrap" style="margin-top:24px;">
+          <a href="#bundles" class="btn"><span class="icon">↓</span> Get Instant Access</a>
+          <div class="btn-note">Zero risk with our 7-day money-back guarantee.</div>
+        </div>
+
+        <div class="included-box">
+          <div class="lock">🔓</div>
+          <div>
+            <strong>INCLUDED TODAY:</strong> Master Claude Cowork · Claude Skills · Claude MCPs · Claude Code · and More
+            <div class="note">4 hands-on sprints that turn Claude into a fully automated business machine — worth $388, yours free.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="glow"></div>
+        <div class="product-box">
+          <div class="dots">••••</div>
+          <h4>139 AI Specialists for Claude</h4>
+          <div class="tag">A Complete Suite of Pre-Built Expert Projects</div>
+          <div class="float-chip chip-1">10,000+ battle-tested prompts</div>
+          <div class="float-chip chip-2">4 AI Masterclasses for Claude</div>
+          <div class="float-chip chip-3">139 pre-built AI Specialists</div>
+        </div>
+        <div class="center-10x">10x<div style="font-size:12px; font-weight:400; color:var(--text-dimmer);">your productivity</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SHOCKING GAP / COMPARE TABLE ===== -->
+  <section style="background:var(--bg-soft);">
+    <div class="container">
+      <div class="section-head">
+        <h2>The Shocking Claude Gap</h2>
+        <p>That's the difference between a typical Claude user and someone running 139 pre-built Specialists. It's not about time. It's about quality.</p>
+      </div>
+      <div class="compare-table">
+        <div class="compare-row head">
+          <div></div><div>Without Claude</div><div>Casual Claude User</div><div class="winner-head">With 139 AI Specialists</div>
+        </div>
+        <div class="compare-row">
+          <div class="task">Managing social media</div>
+          <div class="cell">6–8 hrs a week, manually</div>
+          <div class="cell">2 hrs, inconsistent tone</div>
+          <div class="cell winner">30 mins, scheduled and done</div>
+        </div>
+        <div class="compare-row">
+          <div class="task">Writing and sending emails</div>
+          <div class="cell">5–10 hrs per campaign</div>
+          <div class="cell">3–5 hrs, sounds like AI</div>
+          <div class="cell winner">1 hr, voice-matched and live</div>
+        </div>
+        <div class="compare-row">
+          <div class="task">Responding to customer messages</div>
+          <div class="cell">Hours of back and forth daily</div>
+          <div class="cell">Still you, just faster</div>
+          <div class="cell winner">Claude handles it while you sleep</div>
+        </div>
+        <div class="compare-row">
+          <div class="task">Researching competitors and markets</div>
+          <div class="cell">Half a day, still incomplete</div>
+          <div class="cell">1 hr, surface level</div>
+          <div class="cell winner">15 mins, gaps and opportunities ready</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURES / ACCORDION LIST ===== -->
+  <section>
+    <div class="container two-col">
+      <div>
+        <h2 class="h2" style="margin-bottom:16px;">Imagine What Your Business Looks Like When Claude Is Running the Work You Hate.</h2>
+        <p class="sub-paragraph" style="margin-bottom:24px;">Every Specialist already knows its role, your context and what to produce – so you stop being the one doing everything.</p>
+        <a href="#bundles" class="btn"><span class="icon">↓</span> Get Instant Access</a>
+      </div>
+      <div>
+        <div class="feature-item"><div class="left">🕐 Your Business Runs Without You</div><div class="arrow">⌄</div></div>
+        <div class="feature-item"><div class="left">🔊 Output That Sounds Like You</div><div class="arrow">⌄</div></div>
+        <div class="feature-item"><div class="left">📊 10x Your Output. Zero Extra Hours.</div><div class="arrow">⌄</div></div>
+        <div class="feature-item"><div class="left">🔗 Connected to Your Entire Stack</div><div class="arrow">⌄</div></div>
+        <div class="feature-item"><div class="left">📈 Scale Without the Headcount</div><div class="arrow">⌄</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIAL SLIDER ===== -->
+  <section style="background:var(--bg-soft);">
+    <div class="container">
+      <div class="testimonial-card">
+        <div class="avatar" style="width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--orange)); margin:0 auto 14px;"></div>
+        <div class="name">Santiago Phoenix</div>
+        <div class="role">Copywriter for 7-figure brands</div>
+        <div class="stars">★★★★★</div>
+        <p class="quote">"I write 60+ pieces of copy every week. With these AI Specialists I kept the quality my clients expect — while cutting production time by at least a third. That's not a tool. That's a team member."</p>
+      </div>
+      <div class="dots-nav">‹ • • ›</div>
+    </div>
+  </section>
+
+  <!-- ===== GRAPH / STATS TEASER ===== -->
+  <section>
+    <div class="container" style="text-align:center;">
+      <h3 style="font-size:22px; max-width:640px; margin:0 auto 32px; color:var(--text-dim);">This Is What Happens When Claude Stops Being a Tool and Starts Being Your Team.</h3>
+      <div style="background:var(--card); border:1px solid var(--card-border); border-radius:16px; padding:48px; color:var(--text-dimmer);">
+        [ gráfico comparativo: Casual Claude user vs. With 139 AI Specialists ]
+      </div>
+      <p style="color:var(--text-dim); margin-top:24px;">The gap isn't gradual. It opens from day one — and widens every week you run the system.</p>
+      <div style="display:flex; justify-content:center; margin-top:24px;">
+        <a href="#bundles" class="btn"><span class="icon">↓</span> Get Instant Access</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CHECKLIST ===== -->
+  <section style="background:var(--bg-soft);">
+    <div class="container">
+      <div class="section-head">
+        <h2>Most Claude Users Are Operating at 20% of What It Can Actually Do.</h2>
+        <p>Here's what your 139 Specialists unlock from day one.</p>
+      </div>
+      <div class="checklist-grid">
+        <div>
+          <div class="check-item"><span class="ok">✓</span> Write and schedule a month of social content in one session</div>
+          <div class="check-item"><span class="ok">✓</span> Build a full launch campaign start to finish</div>
+          <div class="check-item"><span class="ok">✓</span> Write, sequence and personalise an entire email funnel</div>
+          <div class="check-item"><span class="ok">✓</span> Create SOPs for every role in your business</div>
+          <div class="check-item"><span class="ok">✓</span> Write sales scripts tailored to your exact offer</div>
+        </div>
+        <div>
+          <div class="check-item"><span class="ok">✓</span> Reply to customer enquiries automatically via Gmail</div>
+          <div class="check-item"><span class="ok">✓</span> Update your CRM and calendar without touching them</div>
+          <div class="check-item"><span class="ok">✓</span> Summarise and report on your financials weekly</div>
+          <div class="check-item"><span class="ok">✓</span> Research any market, audience or trend in 15 minutes</div>
+          <div class="check-item"><span class="ok">✓</span> Run your entire business from a laptop, anywhere in the world</div>
+        </div>
+      </div>
+      <p style="text-align:center; color:var(--text-dimmer); font-size:14px;">None of this requires prompting from scratch. Every Specialist is pre-configured. Open it, ask your question, get expert output.</p>
+    </div>
+  </section>
+
+  <!-- ===== URGENCY BOX ===== -->
+  <section>
+    <div class="container">
+      <div style="border:1px solid var(--purple); background:rgba(139,65,172,.06); border-radius:16px; padding:48px; text-align:center;">
+        <h2 class="h2" style="max-width:640px; margin:0 auto 16px;">But what's actually scarier? Being the last one in your market to figure this out.</h2>
+        <p style="color:var(--text-dim); max-width:640px; margin:0 auto 24px;">In February 2026 Claude hit #1 on the App Store. 2.5 million people left ChatGPT in weeks. They didn't find a secret tool. They just did this before you did.</p>
+        <a href="#bundles" class="btn"><span class="icon">↓</span> Get Instant Access</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BENEFITS ===== -->
+  <section style="background:var(--bg-soft);">
+    <div class="container">
+      <div class="section-head" style="margin-bottom:32px;"><h2>Here's What Changes From Day One:</h2></div>
+      <div class="benefit-grid">
+        <div class="benefit-card"><div class="icon">🖌️</div><h4>Builds Faster</h4><p>From idea to execution in hours, not weeks. Every Specialist is pre-configured and ready to produce from message one.</p></div>
+        <div class="benefit-card"><div class="icon">💰</div><h4>Costs Less</h4><p>Cancel the freelancers, the contractors, the single-use tools. Your Specialists cost nothing per month and never invoice you.</p></div>
+        <div class="benefit-card"><div class="icon">✍️</div><h4>Sounds Like You</h4><p>Output that doesn't need 40 minutes of editing to feel human. Every Specialist is configured to your voice and context.</p></div>
+        <div class="benefit-card"><div class="icon">📦</div><h4>Delivers More</h4><p>Higher quality output across every business function — marketing, sales, ops, finance, HR — every single day.</p></div>
+        <div class="benefit-card"><div class="icon">⚙️</div><h4>Runs On Systems</h4><p>Every function has a Specialist. Every Specialist has a workflow. Your business stops depending on you being the system.</p></div>
+        <div class="benefit-card"><div class="icon">🕐</div><h4>Gives You Time Back</h4><p>Stop doing work that AI does better. Start doing only what you can do. That's the whole point.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CATEGORY GRID ===== -->
+  <section>
+    <div class="container">
+      <div class="section-head"><h2>139 Specialists. Every Corner of Your Business Covered.</h2></div>
+      <div class="category-grid">
+        <div class="category-box"><div class="cat-icon">📣</div><div class="cat-count">15+ agents</div><h5>Marketing</h5><p>Campaigns, positioning, branding and market analysis.</p></div>
+        <div class="category-box"><div class="cat-icon">💰</div><div class="cat-count">12+ agents</div><h5>Sales</h5><p>Scripts, proposals, objections and complete sales funnel.</p></div>
+        <div class="category-box"><div class="cat-icon">✍️</div><div class="cat-count">18+ agents</div><h5>Copy &amp; Content</h5><p>VSLs, emails, headlines, scripts and sales pages.</p></div>
+        <div class="category-box"><div class="cat-icon">📊</div><div class="cat-count">10+ agents</div><h5>Paid Traffic</h5><p>Creatives, audiences, performance analysis and media.</p></div>
+        <div class="category-box"><div class="cat-icon">⚖️</div><div class="cat-count">8+ agents</div><h5>Legal</h5><p>Contracts, terms, risk analysis and compliance.</p></div>
+        <div class="category-box"><div class="cat-icon">💵</div><div class="cat-count">10+ agents</div><h5>Finance</h5><p>Cash flow, projections, cost and pricing.</p></div>
+        <div class="category-box"><div class="cat-icon">📋</div><div class="cat-count">7+ agents</div><h5>Accounting</h5><p>Reports, launches and fiscal control.</p></div>
+        <div class="category-box"><div class="cat-icon">⚙️</div><div class="cat-count">12+ agents</div><h5>Management &amp; Ops</h5><p>Processes, OKRs, delegation and operational routines.</p></div>
+        <div class="category-box"><div class="cat-icon">👥</div><div class="cat-count">8+ agents</div><h5>HR &amp; People</h5><p>Recruitment, onboarding and performance evaluation.</p></div>
+        <div class="category-box"><div class="cat-icon">🤖</div><div class="cat-count">10+ agents</div><h5>Technology &amp; AI</h5><p>Prompts, automations, integrations and AI strategy.</p></div>
+      </div>
+
+      <h4 style="text-align:center; margin-top:40px; margin-bottom:8px; color:var(--text-dim); font-weight:500;">Inside Technology &amp; AI, your specialists break down further:</h4>
+      <div class="subcat-strip">
+        <div class="subcat-item"><div class="n">1</div><div class="label">Business — Product Manager</div></div>
+        <div class="subcat-item"><div class="n">8</div><div class="label">Data &amp; AI</div></div>
+        <div class="subcat-item"><div class="n">14</div><div class="label">Development</div></div>
+        <div class="subcat-item"><div class="n">5</div><div class="label">Infrastructure</div></div>
+        <div class="subcat-item"><div class="n">5</div><div class="label">Quality &amp; Testing</div></div>
+        <div class="subcat-item"><div class="n">1</div><div class="label">Security Auditor</div></div>
+        <div class="subcat-item"><div class="n">2</div><div class="label">Specialization</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== REVIEWS ===== -->
+  <section style="background:var(--bg-soft);">
+    <div class="container">
+      <div class="section-head">
+        <h2>70,000+ entrepreneurs have trusted this AI system. Here's what they say:</h2>
+        <p>Don't just take my word for it, listen to thousands of others.</p>
+      </div>
+      <div class="review-grid">
+        <div class="review-card"><div class="who"><div class="avatar">S</div>Stephanie</div><div class="stars">★★★★★</div><p>Been going through the Specialists all weekend — generating content, rewriting email templates, building strategies I'd been putting off for months. Mind blown.</p></div>
+        <div class="review-card"><div class="who"><div class="avatar">S</div>Sally</div><div class="stars">★★★★★</div><p>This takes away the struggle of knowing what to ask and how to ask it. Recorded a voice note on the way home, ran it through the content Specialist — polished script in minutes.</p></div>
+        <div class="review-card"><div class="who"><div class="avatar">J</div>Josh</div><div class="stars">★★★★</div><p>Bought this. Worth every penny.</p></div>
+        <div class="review-card"><div class="who"><div class="avatar">S</div>Sebastien</div><div class="stars">★★★★★</div><p>Really solid Specialists in here — a lot of inspiration and some I never would have set up myself. Worth it.</p></div>
+        <div class="review-card"><div class="who"><div class="avatar">F</div>Flaco</div><div class="stars">★★★★</div><p>Bought it today. Genuinely impressed — there are Specialists in here I never would have thought to use.</p></div>
+        <div class="review-card"><div class="who"><div class="avatar">T</div>Thomas</div><div class="stars">★★★★★</div><p>Just got access — looks amazing. Worth ten times the cost.</p></div>
+        <div class="review-card"><div class="who"><div class="avatar">L</div>Leon</div><div class="stars">★★★★</div><p>Very helpful and very comprehensive. Every business function covered.</p></div>
+        <div class="review-card"><div class="who"><div class="avatar">K</div>kellie</div><div class="stars">★★★★★</div><p>What a complete resource. Takes away the struggle of knowing the right questions to ask.</p></div>
+        <div class="review-card"><div class="who"><div class="avatar">D</div>DB</div><div class="stars">★★★★★</div><p>The prompts and ideas are valuable. Great product.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STEPS ===== -->
+  <section>
+    <div class="container">
+      <div class="section-head"><h2>This is all it takes.</h2></div>
+      <div class="steps-grid">
+        <div class="step-card"><div class="num">01</div><p>Get your 139 AI Specialists — set up in under 10 minutes</p></div>
+        <div class="step-card"><div class="num">02</div><p>Open the right Specialist for every task, every single day</p></div>
+        <div class="step-card"><div class="num">03</div><p>Get output that sounds like you and a business that runs like a team</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRICING ===== -->
+  <section id="bundles" style="background:var(--bg-soft);">
+    <div class="container">
+      <div class="pricing-head">
+        <h2 class="h2">Get Your 139 AI Specialists.</h2>
+        <div class="pricing-tag">One payment. Lifetime access.</div>
+      </div>
+
+      <div class="main-offer">
+        <div class="best-value">LAUNCH PRICE</div>
+        <h3>139 AI Specialists for Claude</h3>
+        <div class="price-row"><span class="price">$19</span></div>
+        <div class="save">One payment. No subscriptions. Yours forever.</div>
+        <ul>
+          <li><span class="ok">✓</span> 139 pre-built AI Specialists across 10 core departments</li>
+          <li><span class="ok">✓</span> Marketing, Sales, Copy &amp; Content, Paid Traffic</li>
+          <li><span class="ok">✓</span> Legal, Finance, Accounting, Management &amp; Ops</li>
+          <li><span class="ok">✓</span> HR &amp; People, Technology &amp; AI (incl. Dev, Data, Infra, Security)</li>
+          <li><span class="ok">✓</span> Ready to run inside Claude from day one</li>
+        </ul>
+        <div class="checkout-bonus-strip">
+          <div class="checkout-bonus-title">Also included today, for free:</div>
+          <div class="checkout-bonus-row"><span class="ok">✓</span> 1,000+ Claude Skills <span class="strike">$97</span></div>
+          <div class="checkout-bonus-row"><span class="ok">✓</span> AI Team Activation Kit <span class="strike">$19</span></div>
+          <div class="checkout-bonus-row"><span class="ok">✓</span> AI Cashflow Starter Kit <span class="strike">$29</span></div>
+        </div>
+        <a href="#" class="cta-full">GET INSTANT ACCESS</a>
+        <div class="risk-free">Risk-free 7-day money-back guarantee</div>
+      </div>
+
+      <!-- BONUS INTRO -->
+      <div class="bonus-header">
+        <div class="buy-today">Buy today and also get</div>
+        <h3>1,000+ Claude Skills — for free.</h3>
+        <p>Every agent is already powerful on its own. But combined with 1,000+ ready-made Claude skills, you get a complete AI operating system for your entire business — from day one.</p>
+      </div>
+
+      <div class="bonus-value-card">
+        <div>
+          <div class="label">Total value of the bonus</div>
+          <div class="tags">1,000+ skills across Marketing, Operations, Finance, Legal, Content &amp; Copy +8 more</div>
+        </div>
+        <div class="figures">
+          <div class="old">$97</div>
+          <div class="free">FREE</div>
+        </div>
+      </div>
+
+      <!-- BONUS 1 -->
+      <div class="bonus-card">
+        <div class="tag-num">BONUS #1</div>
+        <h4>AI Team Activation Kit</h4>
+        <p>Most people buy an AI tool and never use it consistently. Not because they're lazy — because they never had a clear system to follow. This kit shows you exactly how to install your Claude Agents, organize them by category and priority, and start getting real results in less than 10 minutes.</p>
+        <ul>
+          <li><span class="ok">✓</span> 5-step quickstart process</li>
+          <li><span class="ok">✓</span> 7-day implementation plan</li>
+          <li><span class="ok">✓</span> 15 ready-to-use workflows</li>
+          <li><span class="ok">✓</span> C.L.E.A.R. input framework for better outputs</li>
+          <li><span class="ok">✓</span> 10 copy-and-paste templates</li>
+          <li><span class="ok">✓</span> Personal AI dashboard system</li>
+          <li><span class="ok">✓</span> Full use cases library organized by category</li>
+        </ul>
+        <div class="price-line"><span class="old">From $19</span><span class="free">FREE</span></div>
+      </div>
+
+      <!-- BONUS 2 -->
+      <div class="bonus-card">
+        <div class="tag-num">BONUS #2</div>
+        <h4>AI Cashflow Starter Kit</h4>
+        <p>Having Claude Agents is powerful. Knowing how to turn them into income is even better. This practical guide shows you how to use your agents to create simple services you can offer to small businesses, coaches, ecommerce stores, and local entrepreneurs — starting this week, from home, with no prior client experience required.</p>
+        <ul>
+          <li><span class="ok">✓</span> 5 complete service blueprints (Social Media Calendar, Email Sequence, Landing Page Audit, Competitor Research &amp; Product Descriptions)</li>
+          <li><span class="ok">✓</span> Full workflow, pricing, client questionnaire &amp; delivery checklist for each service</li>
+          <li><span class="ok">✓</span> 7-day action plan to land your first client</li>
+          <li><span class="ok">✓</span> 10 copy-and-paste outreach message templates</li>
+          <li><span class="ok">✓</span> Realistic path toward $100/day</li>
+        </ul>
+        <div class="price-line"><span class="old">From $29</span><span class="free">FREE</span></div>
+      </div>
+
+      <div class="launch-warning">⚠️ <strong>Launch pricing ends soon.</strong> Price returns to full value after the promo period.</div>
+    </div>
+  </section>
+
+  <!-- ===== FOUNDER ===== -->
+  <section>
+    <div class="container">
+      <div class="founder-box">
+        <div class="founder-head">
+          <div class="founder-avatar"></div>
+          <h2 class="h2" style="font-size:24px;">Hey there,<br>I'm [Seu Nome]</h2>
+        </div>
+        <p>Eu construí este sistema depois de testar dezenas de configurações de Claude em diferentes negócios.</p>
+        <p>O resultado soa como você. Não como IA. Esse é todo o ponto.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section style="background:var(--bg-soft);">
+    <div class="container">
+      <div class="section-head" style="text-align:left; max-width:none; margin-bottom:24px;"><h2>Have more questions?</h2></div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="q">What exactly are the 139 AI Specialists? <span class="plus">+</span></div>
+          <div class="a">They're pre-built Claude Skills packaged as a single plugin you install into your Claude app in a few clicks.</div>
+        </div>
+        <div class="faq-item">
+          <div class="q">Do I need a paid Claude account? <span class="plus">+</span></div>
+          <div class="a">Yes. You'll need the Claude desktop app and Claude Workspace / Cowork to install and use them.</div>
+        </div>
+        <div class="faq-item">
+          <div class="q">Is there a guarantee? <span class="plus">+</span></div>
+          <div class="a">7 days, full refund, no questions asked.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER CTA ===== -->
+  <section>
+    <div class="container">
+      <div class="footer-cta">
+        <h2 class="h2">Your only regret will be not doing this sooner.</h2>
+        <p>139 AI Specialists. One payment. Your entire AI team — deployed today, running forever.</p>
+        <a href="#bundles" class="btn"><span class="icon">↓</span> Get Instant Access</a>
+      </div>
+      <div class="footer-legal">
+        © 2026 [Sua Empresa]. All rights reserved.<br>
+        Claude é uma marca da Anthropic. Este produto é criado de forma independente e não é afiliado ou endossado pela Anthropic.
+        <div class="links" style="margin-top:12px;"><a href="#">Privacy</a> | <a href="#">Terms &amp; Conditions</a> | <a href="#">Earnings Disclaimer</a></div>
+      </div>
+    </div>
+  </section>
+
+<script>
+  document.querySelectorAll('.faq-item .q').forEach(function(q){
+    q.addEventListener('click', function(){
+      var item = q.closest('.faq-item');
+      var wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(i){ i.classList.remove('open'); });
+      if(!wasOpen){ item.classList.add('open'); }
+    });
+  });
+</script>
+</body>
+</html>
