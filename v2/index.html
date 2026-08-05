@@ -226,6 +226,15 @@
   .testimonial-card .quote{ font-size:18px; color:var(--text); line-height:1.6; }
   .dots-nav{ text-align:center; margin-top:20px; color:var(--text-dimmer); }
 
+  /* ===== Chart ===== */
+  .chart-card{
+    background:var(--card);
+    border:1px solid var(--card-border);
+    border-radius:16px;
+    padding:32px;
+  }
+  .chart-img{ width:100%; height:auto; display:block; }
+
   /* ===== Stats ===== */
   .stats-row{ display:grid; grid-template-columns:1fr 1fr; gap:24px; margin:40px 0; }
   .stat-card{
@@ -581,8 +590,8 @@
   <section>
     <div class="container" style="text-align:center;">
       <h3 style="font-size:22px; max-width:640px; margin:0 auto 32px; color:var(--text-dim);">This Is What Happens When Claude Stops Being a Tool and Starts Being Your Team.</h3>
-      <div style="background:var(--card); border:1px solid var(--card-border); border-radius:16px; padding:48px; color:var(--text-dimmer);">
-        [ gráfico comparativo: Casual Claude user vs. With 139 AI Specialists ]
+      <div class="chart-card">
+        <img src="https://raw.githubusercontent.com/Officialbrandt93/ClaudeagentsPro/main/grafico_139_ai_specialists_animado.svg" alt="Casual Claude user vs. With 139 AI Specialists — growth comparison" class="chart-img" />
       </div>
       <p style="color:var(--text-dim); margin-top:24px;">The gap isn't gradual. It opens from day one — and widens every week you run the system.</p>
       <div style="display:flex; justify-content:center; margin-top:24px;">
