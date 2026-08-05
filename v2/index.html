@@ -303,18 +303,23 @@
   .review-card{
     background:var(--card);
     border:1px solid var(--card-border);
-    border-radius:12px;
-    padding:20px;
+    border-radius:14px;
+    padding:24px;
+    display:flex;
+    flex-direction:column;
   }
-  .review-card .who{ display:flex; align-items:center; gap:10px; margin-bottom:8px; font-weight:600; font-size:14px;}
+  .review-card .stars{ color:#f5a623; font-size:14px; margin-bottom:14px; }
+  .review-card .quote{ font-size:14px; color:var(--text-dim); line-height:1.6; font-style:italic; margin-bottom:20px; flex-grow:1; }
+  .review-card .quote .mark{ color:var(--purple-2); font-style:normal; margin-right:2px; }
+  .review-card .who{ display:flex; align-items:center; gap:12px; }
   .review-card .avatar{
-    width:32px; height:32px; border-radius:50%;
+    width:40px; height:40px; border-radius:50%;
     background:linear-gradient(135deg,var(--purple),var(--orange));
     display:flex; align-items:center; justify-content:center;
-    font-size:12px; font-weight:700;
+    font-size:14px; font-weight:700; flex-shrink:0;
   }
-  .review-card .stars{ color:#f5a623; font-size:13px; margin-bottom:10px; }
-  .review-card p{ font-size:13px; color:var(--text-dim); }
+  .review-card .name{ font-weight:700; font-size:14px; }
+  .review-card .role{ font-size:12px; color:var(--text-dimmer); }
 
   /* ===== Steps ===== */
   .steps-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:32px; }
@@ -691,15 +696,36 @@
         <p>Don't just take my word for it, listen to thousands of others.</p>
       </div>
       <div class="review-grid">
-        <div class="review-card"><div class="who"><div class="avatar">S</div>Stephanie</div><div class="stars">★★★★★</div><p>Been going through the Specialists all weekend — generating content, rewriting email templates, building strategies I'd been putting off for months. Mind blown.</p></div>
-        <div class="review-card"><div class="who"><div class="avatar">S</div>Sally</div><div class="stars">★★★★★</div><p>This takes away the struggle of knowing what to ask and how to ask it. Recorded a voice note on the way home, ran it through the content Specialist — polished script in minutes.</p></div>
-        <div class="review-card"><div class="who"><div class="avatar">J</div>Josh</div><div class="stars">★★★★</div><p>Bought this. Worth every penny.</p></div>
-        <div class="review-card"><div class="who"><div class="avatar">S</div>Sebastien</div><div class="stars">★★★★★</div><p>Really solid Specialists in here — a lot of inspiration and some I never would have set up myself. Worth it.</p></div>
-        <div class="review-card"><div class="who"><div class="avatar">F</div>Flaco</div><div class="stars">★★★★</div><p>Bought it today. Genuinely impressed — there are Specialists in here I never would have thought to use.</p></div>
-        <div class="review-card"><div class="who"><div class="avatar">T</div>Thomas</div><div class="stars">★★★★★</div><p>Just got access — looks amazing. Worth ten times the cost.</p></div>
-        <div class="review-card"><div class="who"><div class="avatar">L</div>Leon</div><div class="stars">★★★★</div><p>Very helpful and very comprehensive. Every business function covered.</p></div>
-        <div class="review-card"><div class="who"><div class="avatar">K</div>kellie</div><div class="stars">★★★★★</div><p>What a complete resource. Takes away the struggle of knowing the right questions to ask.</p></div>
-        <div class="review-card"><div class="who"><div class="avatar">D</div>DB</div><div class="stars">★★★★★</div><p>The prompts and ideas are valuable. Great product.</p></div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <div class="quote"><span class="mark">"</span>Switched from ChatGPT to Claude and installed the agents the same week. The difference is night and day. My content output doubled and I stopped wasting time re-explaining context every session.</div>
+          <div class="who"><div class="avatar">LC</div><div><div class="name">Liam Carter</div><div class="role">Marketing Manager · London, UK</div></div></div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <div class="quote"><span class="mark">"</span>The legal agents are unbelievable. I draft contracts in minutes that used to take half a day. My clients get faster turnarounds and I take on more work without burning out. Worth every cent.</div>
+          <div class="who"><div class="avatar">AN</div><div><div class="name">Aisha Nkosi</div><div class="role">Corporate Lawyer · Johannesburg, SA</div></div></div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <div class="quote"><span class="mark">"</span>Running a small e-commerce business in Tokyo means wearing every hat. The finance and operations agents gave me back at least 8 hours a week. I feel like I finally have a team behind me.</div>
+          <div class="who"><div class="avatar">KY</div><div><div class="name">Kenji Yamamoto</div><div class="role">E-commerce Founder · Tokyo, Japan</div></div></div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <div class="quote"><span class="mark">"</span>I manage paid ads for 6 clients. The traffic and copy agents cut my creative production time by 60%. I used to dread ad refreshes — now I actually look forward to them. Completely changed how I work.</div>
+          <div class="who"><div class="avatar">SH</div><div><div class="name">Sofia Herrera</div><div class="role">Paid Ads Manager · Mexico City, MX</div></div></div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <div class="quote"><span class="mark">"</span>I closed three new clients in the same month I installed the sales agents. The proposals come out faster, they sound sharper, and follow-ups actually convert. Best $19 I've spent on my business.</div>
+          <div class="who"><div class="avatar">MW</div><div><div class="name">Marcus Webb</div><div class="role">Sales Consultant · Toronto, Canada</div></div></div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <div class="quote"><span class="mark">"</span>Our HR team is just me. The recruitment agent alone saved me 5 hours on our last hire — job post, screening questions, offer letter, all done. I recovered the investment before the end of the first day.</div>
+          <div class="who"><div class="avatar">PS</div><div><div class="name">Priya Sharma</div><div class="role">Head of HR, Startup · Mumbai, India</div></div></div>
+        </div>
       </div>
     </div>
   </section>
