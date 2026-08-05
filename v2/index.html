@@ -120,6 +120,13 @@
     display:flex; justify-content:center; align-items:center;
     min-height:420px;
   }
+  .hero-img{
+    position:relative;
+    width:100%;
+    max-width:480px;
+    border-radius:16px;
+    box-shadow: 0 30px 60px rgba(0,0,0,.5);
+  }
   .glow{
     position:absolute;
     width:420px; height:420px;
@@ -470,7 +477,12 @@
   <!-- ===== HERO ===== -->
   <section>
     <div class="container hero">
-      <div>
+      <div class="hero-visual">
+        <div class="glow"></div>
+        <img src="https://raw.githubusercontent.com/Officialbrandt93/ClaudeagentsPro/main/claude%20agents%20mockup%202.jpg" alt="139 AI Specialists for Claude" class="hero-img" />
+      </div>
+
+      <div class="hero-text">
         <div class="badge-rating"><span class="stars">★★★★★</span> 4.7 &nbsp;|&nbsp; Trusted by 70,000+ entrepreneurs and marketers</div>
         <div class="eyebrow">Heard of OR just switched to Claude?</div>
         <h1 class="h1">Turn Claude Into a High-Performing AI Team.</h1>
@@ -490,19 +502,6 @@
             <div class="note">4 hands-on sprints that turn Claude into a fully automated business machine — worth $388, yours free.</div>
           </div>
         </div>
-      </div>
-
-      <div class="hero-visual">
-        <div class="glow"></div>
-        <div class="product-box">
-          <div class="dots">••••</div>
-          <h4>139 AI Specialists for Claude</h4>
-          <div class="tag">A Complete Suite of Pre-Built Expert Projects</div>
-          <div class="float-chip chip-1">10,000+ battle-tested prompts</div>
-          <div class="float-chip chip-2">4 AI Masterclasses for Claude</div>
-          <div class="float-chip chip-3">139 pre-built AI Specialists</div>
-        </div>
-        <div class="center-10x">10x<div style="font-size:12px; font-weight:400; color:var(--text-dimmer);">your productivity</div></div>
       </div>
     </div>
   </section>
