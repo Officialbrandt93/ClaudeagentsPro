@@ -475,6 +475,14 @@
     .compare-row{ grid-template-columns:1fr 1fr; }
     .benefit-grid, .category-grid, .review-grid, .steps-grid, .stats-row{ grid-template-columns:1fr 1fr; }
     .h1{ font-size:32px; }
+    .subcat-strip{ grid-template-columns:repeat(3,1fr); gap:10px; }
+    .chart-card{ padding:8px; }
+    section .container{ padding:0 16px; }
+  }
+  @media (max-width: 480px){
+    .subcat-strip{ grid-template-columns:repeat(2,1fr); }
+    .subcat-item{ padding:12px 8px; }
+    .chart-card{ padding:6px; border-radius:12px; }
   }
 </style>
 </head>
