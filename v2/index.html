@@ -234,6 +234,7 @@
     padding:32px;
   }
   .chart-img{ width:100%; height:auto; display:block; }
+  svg.chart-img{ overflow:visible; }
 
   /* ===== Stats ===== */
   .stats-row{ display:grid; grid-template-columns:1fr 1fr; gap:24px; margin:40px 0; }
@@ -609,7 +610,115 @@
     <div class="container" style="text-align:center;">
       <h3 style="font-size:22px; max-width:640px; margin:0 auto 32px; color:var(--text-dim);">This Is What Happens When Claude Stops Being a Tool and Starts Being Your Team.</h3>
       <div class="chart-card">
-        <img src="https://raw.githubusercontent.com/Officialbrandt93/ClaudeagentsPro/main/grafico_139_ai_specialists_animado.svg" alt="Casual Claude user vs. With 139 AI Specialists — growth comparison" class="chart-img" />
+        <svg class="chart-img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1648 927" role="img" aria-label="Casual Claude user vs. With 139 AI Specialists — growth comparison">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1d1d1f"/>
+      <stop offset="100%" stop-color="#171719"/>
+    </linearGradient>
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <style>
+      .label { font-family: Arial, Helvetica, sans-serif; fill: #f5f5f5; }
+      .axis  { font-family: Arial, Helvetica, sans-serif; fill: #eeeeee; font-size: 24px; }
+      .grid  { stroke: #3a3a3d; stroke-width: 2; }
+      .callout { fill: #2b2b2e; stroke: #333337; stroke-width: 1; }
+    </style>
+  </defs>
+
+  <rect width="1648" height="927" rx="18" fill="url(#bg)"/>
+
+  <!-- Grid -->
+  <g opacity="0.95">
+    <line class="grid" x1="140" y1="110" x2="1565" y2="110"/>
+    <line class="grid" x1="140" y1="171" x2="1565" y2="171"/>
+    <line class="grid" x1="140" y1="233" x2="1565" y2="233"/>
+    <line class="grid" x1="140" y1="294" x2="1565" y2="294"/>
+    <line class="grid" x1="140" y1="356" x2="1565" y2="356"/>
+    <line class="grid" x1="140" y1="417" x2="1565" y2="417"/>
+    <line class="grid" x1="140" y1="479" x2="1565" y2="479"/>
+    <line class="grid" x1="140" y1="540" x2="1565" y2="540"/>
+    <line class="grid" x1="140" y1="602" x2="1565" y2="602"/>
+    <line class="grid" x1="140" y1="663" x2="1565" y2="663"/>
+    <line class="grid" x1="140" y1="725" x2="1565" y2="725"/>
+  </g>
+
+  <!-- Y labels -->
+  <g class="axis" text-anchor="end">
+    <text x="102" y="118">100</text>
+    <text x="102" y="179">90</text>
+    <text x="102" y="241">80</text>
+    <text x="102" y="302">70</text>
+    <text x="102" y="364">60</text>
+    <text x="102" y="425">50</text>
+    <text x="102" y="487">40</text>
+    <text x="102" y="548">30</text>
+    <text x="102" y="610">20</text>
+    <text x="102" y="671">10</text>
+    <text x="102" y="733">0</text>
+  </g>
+
+  <!-- X labels -->
+  <g class="axis" text-anchor="middle">
+    <text x="235" y="815">Jan</text>
+    <text x="473" y="815">Feb</text>
+    <text x="711" y="815">Mar</text>
+    <text x="949" y="815">Apr</text>
+    <text x="1187" y="815">May</text>
+    <text x="1425" y="815">Jun</text>
+  </g>
+
+  <!-- Lines -->
+  <path id="purpleLine"
+        d="M140 663 L463 479 L733 386 L999 516 L1250 281 L1565 171"
+        fill="none" stroke="#a94cd0" stroke-width="5" stroke-linecap="round"
+        stroke-linejoin="round" filter="url(#softGlow)"
+        pathLength="1000" stroke-dasharray="1000" stroke-dashoffset="1000">
+    <animate attributeName="stroke-dashoffset" from="1000" to="0" dur="3.2s"
+             begin="0.4s" fill="freeze" calcMode="spline"
+             keySplines="0.42 0 0.58 1"/>
+  </path>
+
+  <path id="grayLine"
+        d="M140 725 L463 553 L733 503 L999 602 L1250 442 L1565 356"
+        fill="none" stroke="#c8c8c8" stroke-width="5" stroke-linecap="round"
+        stroke-linejoin="round"
+        pathLength="1000" stroke-dasharray="1000" stroke-dashoffset="1000">
+    <animate attributeName="stroke-dashoffset" from="1000" to="0" dur="3.2s"
+             begin="0.7s" fill="freeze" calcMode="spline"
+             keySplines="0.42 0 0.58 1"/>
+  </path>
+
+  <!-- Animated end points -->
+  <circle cx="1565" cy="171" r="0" fill="#a94cd0">
+    <animate attributeName="r" values="0;8;5" dur="0.5s" begin="3.5s" fill="freeze"/>
+  </circle>
+  <circle cx="1565" cy="356" r="0" fill="#c8c8c8">
+    <animate attributeName="r" values="0;8;5" dur="0.5s" begin="3.8s" fill="freeze"/>
+  </circle>
+
+  <!-- Callouts -->
+  <g opacity="0">
+    <rect class="callout" x="1190" y="128" width="300" height="66" rx="8"/>
+    <text class="label" x="1212" y="169" font-size="22">With 139 AI Specialists</text>
+    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="3.2s" fill="freeze"/>
+    <animateTransform attributeName="transform" type="translate" from="0 12" to="0 0"
+                      dur="0.5s" begin="3.2s" fill="freeze"/>
+  </g>
+
+  <g opacity="0">
+    <rect class="callout" x="500" y="577" width="255" height="66" rx="8"/>
+    <text class="label" x="522" y="618" font-size="22">Casual Claude user</text>
+    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="2.8s" fill="freeze"/>
+    <animateTransform attributeName="transform" type="translate" from="0 12" to="0 0"
+                      dur="0.5s" begin="2.8s" fill="freeze"/>
+  </g>
+</svg>
       </div>
       <p style="color:var(--text-dim); margin-top:24px;">The gap isn't gradual. It opens from day one — and widens every week you run the system.</p>
       <div style="display:flex; justify-content:center; margin-top:24px;">
